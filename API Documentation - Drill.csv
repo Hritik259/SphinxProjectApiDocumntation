@@ -1,0 +1,2094 @@
+,Unnamed: 0.8,Unnamed: 0.7,Unnamed: 0.6,Unnamed: 0.5,Unnamed: 0.4,Unnamed: 0.3,Unnamed: 0.2,Unnamed: 0.1,Unnamed: 0,S.No. ,Controller,Product,Resources,Sub resource/Action,External/Internal,UI Page,Description,Method,Query Parameter,Path Variable,Request Body,URL,Response Status,Sample successful Response
+0,0,0,0,0,0,0,0,0,0,1.0,UserManagementController,Drill,users,login,External,Login Page,Login to the Drill Platform,GET,,,"{
+  ""password"": ""string"",
+  ""username"": ""string""
+}",/api/v1/users/login,200,"{""status"":0, ""token"":""Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdW5pbDExMDExM0BbWFpbC5jb20iLCJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiU1VQRVJBRE1JTiJ9XSwiaWF0IjoxNjY0MjYwMDc2LCJleHAiOjE2NjQzMjMyMDB9.BcZRx2DPJxYUz7oJ6b2g_uhhA_iDemK-bDkN0gxCerHgScVfjasmRxjU6zNqfo883aP0RmwXV3w-YjR_VB6sVw"", ""userId"":""null"", ""userDetails"":{""uid"":""8d72f798-c08b-42ef-82c1-2081d7e4764f"",""fullName"":""Sunil Kumar"",""uemail"":""sunil110113@gmail.com""}, ""authorities"":[""SUPERADMIN""], ""responseCode"":200}"
+1,1,1,1,1,1,1,1,1,1,2.0,,,users,forgotpassword,External,Forgot Password,API for forgot password and send the email to update password,POST,emailid,,NA,/api/v1/users/forgotpassword,200,Please check your email account for resetting password
+2,2,2,2,2,2,2,2,2,2,3.0,,,users,loginattempt,External,Login Page,API to save a user's login atempt,POST,loginAttemptObj,,"{
+  ""attemptEmail"": ""string"",
+  ""attemptStatus"": ""string"",
+  ""attemptTime"": datetime,
+  ""device"": ""string"",
+  ""location"": ""string"",
+  ""loginAttemptId"": 0,
+  ""operatingSystem"": ""string""
+}",/api/v1/users/loginattempt,200,"{
+  ""msg"": ""Login attempt saved""
+}"
+3,3,3,3,3,3,3,3,3,3,4.0,,,users,register,External,Login Page,API to register users,POST,userObj,,"{
+  ""active"": true,
+  ""conditionAccepted"": true,
+  ""fullName"": ""string"",
+  ""jobfeed"": true,
+  ""mentor"": true,
+  ""password"": ""string"",
+  ""resumeLink"": ""string"",
+  ""ucontact"": ""string"",
+  ""uemail"": ""string"",
+  ""ugroup"": ""string"",
+  ""uid"": ""string"",
+  ""urole"": ""string"",
+  ""userCreatedby"": ""string"",
+  ""userCreatedts"": ""string"",
+  ""userUpdatedby"": ""string"",
+  ""userUpdatedts"": ""string"",
+  ""username"": ""string"",
+  ""utype"": ""string""
+}",/api/v1/users/register,200,"tbd {""u_id"":""4c989553-cc97-440f-823d-1c1ca2690f8a""}"
+4,4,4,4,4,4,4,4,4,4,5.0,,,users,resendverification,External,Forgot Password,To resend verification email to user,POST,emailid,,NA,/api/v1/users/resendverification,200,"{
+  ""headers"": {},
+  ""body"": {
+    ""msg"": ""You account is verified. Please click on Forgot Password or contact techsupport@wuelev8.tech for further support""
+  },
+  ""statusCode"": ""INTERNAL_SERVER_ERROR"",
+  ""statusCodeValue"": 500
+}"
+5,5,5,5,5,5,5,5,5,5,6.0,,,users,updatepassword,External,Login Page,To update password for user's account,POST,body,,"{
+  ""emailid"": ""string"",
+  ""newPassword"": ""string"",
+  ""oldPassword"": ""string""
+}",/api/v1/users/updatepassword,200,tbd 
+6,6,6,6,6,6,6,6,6,6,7.0,,,users,users,,,To find details of a user as per given query,GET,query,,NA,/api/v1/users,200,"[
+  {
+    ""username"": ""abc@gmail.com"",
+    ""fullName"": ""ABC XYZ"",
+    ""email"": ""abc@gmail.com"",
+    ""password"": null,
+    ""userCreatedby"": null,
+    ""mentor"": true,
+    ""jobfeed"": true,
+    ""resumeLink"": ""https://drive.google/"",
+    ""userCreatedts"": ""2022-09-28T10:16:59.054+00:00"",
+    ""userUpdatedby"": null,
+    ""userUpdatedts"": ""2022-09-28T10:16:59.054+00:00"",
+    ""active"": true,
+    ""uid"": ""4c989553-cc97-440f-823d-1c1ca2690f8a"",
+    ""conditionAccepted"": true,
+    ""ucontact"": ""1234567890"",
+    ""utype"": ""string"",
+    ""urole"": ""USER"",
+    ""ugroup"": ""GENERAL""
+  }
+]"
+7,7,7,7,7,7,7,7,7,7,8.0,,,users,search,,,To find users' profiles according to given parameters,GET,"isActive,limit,order,profile",,NA,/api/v1/users/search,200,"{
+  ""totalRecordCount"": 1,
+  ""details"": [
+    {
+      ""uId"": ""4c989553-cc97-440f-823d-1c1ca2690f8a"",
+      ""username"": ""abc@gmail.com"",
+      ""fullName"": ""ABC XYZ"",
+      ""uEmail"": ""abc@gmail.com"",
+      ""uContact"": ""1234567890"",
+      ""password"": ""$2a$10$SvBVrBDOFV1eUPCkw3a0ie13jctQQEm9Ccx/1JtSvkcTXAY1eiS3i"",
+      ""uGroup"": ""GENERAL"",
+      ""uRole"": ""USER"",
+      ""isActive"": true,
+      ""uType"": ""string"",
+      ""isConditionAccepted"": false,
+      ""resumeLink"": null,
+      ""mentor"": false,
+      ""jobfeed"": false,
+      ""userCreatedby"": null,
+      ""userUpdatedby"": null,
+      ""userCreatedts"": ""2022-09-28T10:16:59.054+00:00"",
+      ""userUpdatedts"": ""2022-09-28T10:16:59.054+00:00"",
+      ""active"": true,
+      ""uid"": ""4c989553-cc97-440f-823d-1c1ca2690f8a"",
+      ""conditionAccepted"": false,
+      ""ucontact"": ""1234567890"",
+      ""utype"": ""string"",
+      ""urole"": ""USER"",
+      ""uemail"": ""abc@gmail.com"",
+      ""ugroup"": ""GENERAL""
+    }
+  ]
+}"
+8,8,8,8,8,8,8,8,8,8,9.0,,,users,login,,-,tbd,POST,,encodedstring,NA,/api/v1/users/verify/{encodedstring},200,NA
+9,9,9,9,9,9,9,9,9,9,10.0,,,users,accesses,,,To find if a user has access to a certain component,GET,"component,componentId",uId,NA,/api/v1/users/{uId}/accesses/component,200,NA
+10,10,10,10,10,10,10,10,10,10,11.0,,,users,users,,,API to get a single user with uId,GET,,uId,NA,/api/v1/users/{userId},200,"{
+  ""username"": null,
+  ""fullName"": null,
+  ""email"": null,
+  ""password"": null,
+  ""userCreatedby"": null,
+  ""mentor"": false,
+  ""jobfeed"": false,
+  ""resumeLink"": null,
+  ""userCreatedts"": null,
+  ""userUpdatedby"": null,
+  ""userUpdatedts"": null,
+  ""uid"": null,
+  ""active"": false,
+  ""conditionAccepted"": false,
+  ""ugroup"": null,
+  ""urole"": null,
+  ""utype"": null,
+  ""ucontact"": null
+}"
+11,11,11,11,11,11,11,11,11,11,12.0,,,users,health,,,tbd,GET,,,NA,/api/v1/health,200,"{""status"": ""UP""}"
+12,12,12,12,12,12,12,12,12,12,13.0,,,users,health,,,tbd,DELETE,,,NA,/api/v1/health,200,"{""status"": ""UP""}"
+13,13,13,13,13,13,13,13,13,13,14.0,,,users,health,,,tbd,HEAD,,,NA,/api/v1/health,,NA
+14,14,14,14,14,14,14,14,14,14,15.0,,,users,health,,,tbd,POST,,,NA,/api/v1/health,200,"{""status"": ""UP""}"
+15,15,15,15,15,15,15,15,15,15,16.0,,,users,health,,,tbd,OPTIONS,,,NA,/api/v1/health,,NA
+16,16,16,16,16,16,16,16,16,16,17.0,,,users,health,,,tbd,PATCH,,,NA,/api/v1/health,200,"{""status"": ""UP""}"
+17,17,17,17,17,17,17,17,17,17,18.0,,,users,health,,,tbd,PUT,,,NA,/api/v1/health,200,"{""status"": ""UP""}"
+18,18,18,18,18,18,18,18,18,18,19.0,DrillController,,users,drills,,,To find details of a hackathon with drillid,GET,"drillId,runningStatus,type,active",,NA,/api/v1/drills,200,"[
+  {
+    ""active"": true,
+    ""createdBy"": ""string"",
+    ""createdTs"": ""2022-09-29T05:18:19.442Z"",
+    ""drillApplicantCount"": 0,
+    ""drillCoverImgUrl"": ""string"",
+    ""drillCustUrl"": ""string"",
+    ""drillEndDt"": ""2022-09-29T05:18:19.442Z"",
+    ""drillHiringExp"": ""string"",
+    ""drillHiringSkill"": ""string"",
+    ""drillId"": ""string"",
+    ""drillLogoUrl"": ""string"",
+    ""drillMobileCoverImgSettings"": ""string"",
+    ""drillName"": ""string"",
+    ""drillNature"": ""string"",
+    ""drillPageSettings"": ""string"",
+    ""drillPartnerId"": ""string"",
+    ""drillPartnerName"": ""string"",
+    ""drillPurpose"": ""string"",
+    ""drillRegistrationEndDt"": ""2022-09-29T05:18:19.442Z"",
+    ""drillSectionComplete"": ""string"",
+    ""drillSocialLinks"": ""string"",
+    ""drillStartDt"": ""2022-09-29T05:18:19.442Z"",
+    ""drillTeamSize"": ""string"",
+    ""drillTimezone"": ""string"",
+    ""drillType"": ""string"",
+    ""updatedBy"": ""string"",
+    ""updatedTs"": ""2022-09-29T05:18:19.442Z""
+  }
+]"
+19,19,19,19,19,19,19,19,19,19,20.0,,,users,drills,,,To add/update a new hackathon details,POST,,,"{
+  ""active"": true,
+  ""createdBy"": ""string"",
+  ""createdTs"": ""2022-09-29T05:18:19.274Z"",
+  ""drillApplicantCount"": 0,
+  ""drillCoverImgUrl"": ""string"",
+  ""drillCustUrl"": ""string"",
+  ""drillEndDt"": ""2022-09-29T05:18:19.274Z"",
+  ""drillHiringExp"": ""string"",
+  ""drillHiringSkill"": ""string"",
+  ""drillId"": ""string"",
+  ""drillLogoUrl"": ""string"",
+  ""drillMobileCoverImgSettings"": ""string"",
+  ""drillName"": ""string"",
+  ""drillNature"": ""string"",
+  ""drillPageSettings"": ""string"",
+  ""drillPartnerId"": ""string"",
+  ""drillPartnerName"": ""string"",
+  ""drillPurpose"": ""string"",
+  ""drillRegistrationEndDt"": ""2022-09-29T05:18:19.274Z"",
+  ""drillSectionComplete"": ""string"",
+  ""drillSocialLinks"": ""string"",
+  ""drillStartDt"": ""2022-09-29T05:18:19.274Z"",
+  ""drillTeamSize"": ""string"",
+  ""drillTimezone"": ""string"",
+  ""drillType"": ""string"",
+  ""updatedBy"": ""string"",
+  ""updatedTs"": ""2022-09-29T05:18:19.274Z""
+}",/api/v1/drills,200,"{
+  ""active"": true,
+  ""createdBy"": ""string"",
+  ""createdTs"": ""2022-09-29T05:18:19.274Z"",
+  ""drillApplicantCount"": 0,
+  ""drillCoverImgUrl"": ""string"",
+  ""drillCustUrl"": ""string"",
+  ""drillEndDt"": ""2022-09-29T05:18:19.274Z"",
+  ""drillHiringExp"": ""string"",
+  ""drillHiringSkill"": ""string"",
+  ""drillId"": ""string"",
+  ""drillLogoUrl"": ""string"",
+  ""drillMobileCoverImgSettings"": ""string"",
+  ""drillName"": ""string"",
+  ""drillNature"": ""string"",
+  ""drillPageSettings"": ""string"",
+  ""drillPartnerId"": ""string"",
+  ""drillPartnerName"": ""string"",
+  ""drillPurpose"": ""string"",
+  ""drillRegistrationEndDt"": ""2022-09-29T05:18:19.274Z"",
+  ""drillSectionComplete"": ""string"",
+  ""drillSocialLinks"": ""string"",
+  ""drillStartDt"": ""2022-09-29T05:18:19.274Z"",
+  ""drillTeamSize"": ""string"",
+  ""drillTimezone"": ""string"",
+  ""drillType"": ""string"",
+  ""updatedBy"": ""string"",
+  ""updatedTs"": ""2022-09-29T05:18:19.274Z""
+}"
+20,20,20,20,20,20,20,20,20,20,21.0,,,users,drills,,,To search users associated with a drill,GET,"email.curentLoc,preferredLoc,clgName,clgSpecialization,jobTitle,organization,noticePeriod,offset,limit,order,profile",,NA,/api/v1/drills/participant/search,200,"{
+  ""totalRecordCount"": 0,
+  ""details"": []
+}"
+21,21,21,21,21,21,21,21,21,21,22.0,,,users,drills,,,To fetch participants with filter,GET,"drillId,participantId",,NA,/api/v1/drills/participants,200,[]
+22,22,22,22,22,22,22,22,22,22,23.0,,,users,drills,,,To get drillId from custom URL,GET,,custUrl,NA,/api/v1/drills/{custUrl},200,"{""drillId"":""{}""}"
+23,23,23,23,23,23,23,23,23,23,24.0,,,users,drills,,,To get drill specific common values,GET,,drillId,NA,/api/v1/drills/{drillId}/common/participate,200,"{
+  ""skills"": [
+    ""Java"",
+    ""reactJs"",
+    ""Python"",
+    ""NodeJs"",
+    ""Docker"",
+    ""DevOps"",
+    ""Kubernetes"",
+    ""Others""
+  ],
+  ""knownPlatforms"": ""Facebook, LinkedIn, WUElev8, Twitter""
+}"
+24,24,24,24,24,24,24,24,24,24,25.0,,,users,drills,,,To post details for registered user,,,drillId,"{
+  ""aadharId"": ""string"",
+  ""affiliatePlatform"": ""string"",
+  ""clgName"": ""string"",
+  ""clgPassingSemester"": 0,
+  ""clgPassingYear"": 0,
+  ""clgSpecialization"": ""string"",
+  ""contact"": ""string"",
+  ""createdBy"": ""string"",
+  ""createdTs"": ""2022-09-29T05:18:19.277Z"",
+  ""ctc"": ""string"",
+  ""currentLoc"": ""string"",
+  ""drillId"": ""string"",
+  ""drillName"": ""string"",
+  ""ectc"": ""string"",
+  ""email"": ""string"",
+  ""fullName"": ""string"",
+  ""jobTitle"": ""string"",
+  ""lastWorkingDay"": ""2022-09-29"",
+  ""noticePeriod"": ""string"",
+  ""notificationResponse"": true,
+  ""organisation"": ""string"",
+  ""pancardId"": ""string"",
+  ""participantId"": ""string"",
+  ""participantState"": ""string"",
+  ""participantType"": ""string"",
+  ""platformUId"": ""string"",
+  ""preferredLoc"": ""string"",
+  ""resumeLink"": ""string"",
+  ""servingNoticePeriod"": true,
+  ""skills"": ""string"",
+  ""teamId"": ""string"",
+  ""teamParticipationMessage"": ""string"",
+  ""theme"": ""string"",
+  ""updatedBy"": ""string"",
+  ""updatedTs"": ""2022-09-29T05:18:19.277Z"",
+  ""willingForJob"": true,
+  ""yearsOfExperience"": 0
+}",/api/v1/drills/{drillId}/participate,200,NA
+25,25,25,25,25,25,25,25,25,25,26.0,,,users,drills,,,To add/update state of participant,PUT,,"drillId,participantId,participantState",NA,/api/v1/drills/{drillId}/participate/{participantId}/state/{participantState},200,NA
+26,26,26,26,26,26,26,26,26,26,27.0,,,users,drills,,,To add a new team,POST,,"drillId,participantId","{
+  ""createdBy"": ""string"",
+  ""createdTs"": ""2022-09-29T08:58:13.561Z"",
+  ""drillId"": ""8af2b4c5-6bb5-4985-b557-abbec4a5a4b7"",
+  ""participantId"": ""string"",
+  ""participantValue"": ""string"",
+  ""selectedTheme"": ""string"",
+  ""teamCurrentSize"": 0,
+  ""teamId"": ""string"",
+  ""teamImgUrl"": ""string"",
+  ""teamLeadParticipantId"": ""string"",
+  ""teamName"": ""string"",
+  ""updatedBy"": ""string"",
+  ""updatedTs"": ""2022-09-29T08:58:13.561Z""
+}",/api/v1/drills/{drillId}/participate/{participantId}/teams,200,"{
+  ""teamId"": ""bb94384e-32b2-4624-8266-3927e6f6d1be"",
+  ""drillId"": ""8af2b4c5-6bb5-4985-b557-abbec4a5a4b7"",
+  ""teamName"": ""string"",
+  ""teamImgUrl"": ""string"",
+  ""selectedTheme"": ""string"",
+  ""teamLeadParticipantId"": ""8af2b4c5-6bb5-4985-b557-abbec4a5a4b7"",
+  ""teamCurrentSize"": 1,
+  ""participantValue"": null,
+  ""participantId"": null,
+  ""createdTs"": ""2022-09-29T09:00:43.241+00:00"",
+  ""updatedTs"": ""2022-09-29T09:00:43.376+00:00"",
+  ""createdBy"": ""string"",
+  ""updatedBy"": ""string""
+}"
+27,27,27,27,27,27,27,27,27,27,28.0,,,users,drills,,,To add a new team member,POST,,"drillId,participantId","{
+  ""createdBy"": ""string"",
+  ""createdTs"": ""2022-09-29T08:58:13.562Z"",
+  ""drillId"": ""string"",
+  ""id"": 0,
+  ""participantId"": ""string"",
+  ""participantValue"": ""string"",
+  ""requestAccepted"": true,
+  ""teamId"": ""string"",
+  ""updatedBy"": ""string"",
+  ""updatedTs"": ""2022-09-29T08:58:13.562Z""
+}",/api/v1/drills/{drillId}/participate/{participantId}/teams/{teamId},200,NA
+28,28,28,28,28,28,28,28,28,28,29.0,,,users,drills,,,To accept team member,GET,leadParticipantId,"drillId,participantId,teamId",NA,/api/v1/drills/{drillId}/participate/{participantId}/teams/{teamId}/accept,200,NA
+29,29,29,29,29,29,29,29,29,29,30.0,,,users,drills,,,To seach teams with initial letters,GET,initialLetters,drillId,NA,/api/v1/drills/{drillId}/teams,200,NA
+30,30,30,30,30,30,30,30,30,30,31.0,,,users,drills,,,To check if a team name is available,GET,teamName,drillId,NA,/api/v1/drills/{drillId}/teams/name,200,TRUE
+31,31,31,31,31,31,31,31,31,31,32.0,,,users,drills,,,To get drill teams,GET,,"drillId,teamId",NA,/api/v1/drills/{drillId}/teams/{teamId},200,[]
+32,32,32,32,32,32,32,32,32,32,33.0,,,users,drills,,,To get all the information of a user,GET,,"drillId,uId",NA,/api/v1/drills/{drillId}/users/{uId},200,FALSE-tbd
+33,33,33,33,33,33,33,33,33,33,34.0,,,users,drills,,,To search drill section,GET,participantId,"drillId,section",NA,/api/v1/drills/{drillId}/{section},200,NA
+34,34,34,34,34,34,34,34,34,34,35.0,,,users,drills,,,To save section in drill,POST,,section,payload,/api/v1/drills/{section},200,NA
+35,35,35,35,35,35,35,35,35,35,36.0,DrillMailController,,users,drills,,,To get types of participants,GET,,,NA,/api/v1/drills/mails/participantTypes,200,"[
+  ""Participant"",
+  ""Shortlisted"",
+  ""Fighters"",
+  ""Winners:Participant"",
+  ""Shortlisted"",
+  ""Fighters"",
+  ""Winners""
+]"
+36,36,36,36,36,36,36,36,36,36,37.0,,,users,drills,,,To send mail to participants,POST,,drillId,"{
+  ""listOfBcc"": [
+    ""string""
+  ],
+  ""listOfReceiver"": [
+    ""string""
+  ],
+  ""listofCc"": [
+    ""string""
+  ],
+  ""mailBody"": ""string"",
+  ""mailSubject"": ""string"",
+  ""templateName"": ""string"",
+  ""userType"": ""string""
+}",/api/v1/drills/{drillId}/mails,,NA
+37,37,37,37,37,37,37,37,37,37,38.0,,,users,drills,,,To get mail templates,GET,templateId,drillId,NA,/api/v1/drills/{drillId}/mails/templates,200,NA
+38,38,38,38,38,38,38,38,38,38,39.0,,,users,drills,,,To add/update mail templates,POST,,drillId,"{
+  ""createdBy"": ""string"",
+  ""createdTs"": ""2022-09-29T08:58:13.560Z"",
+  ""drillId"": ""string"",
+  ""mailBody"": ""string"",
+  ""mailSubject"": ""string"",
+  ""mailTemplateId"": ""string"",
+  ""templateDesc"": ""string"",
+  ""templateName"": ""string"",
+  ""updatedBy"": ""string"",
+  ""updatedTs"": ""2022-09-29T08:58:13.560Z""
+}",/api/v1/drills/{drillId}/mails/templates,200,"{
+  ""mailTemplateId"": ""7b6348c6-8383-44dc-b9e8-88ed095d2725"",
+  ""drillId"": ""8af2b4c5-6bb5-4985-b557-abbec4a5a4b7"",
+  ""templateName"": ""string"",
+  ""templateDesc"": ""string"",
+  ""mailSubject"": ""string"",
+  ""mailBody"": ""string"",
+  ""createdTs"": ""2022-09-29T11:20:44.764+00:00"",
+  ""updatedTs"": ""2022-09-29T11:20:44.764+00:00"",
+  ""createdBy"": ""string"",
+  ""updatedBy"": ""string""
+}"
+39,39,39,39,39,39,39,39,39,39,40.0,DrillSubmissionController,,users,drills,,,To get default submission fields,GET,,,NA,/api/v1/drills/submissionFields/default,200,"[{
+  ""fieldId"": ""string"",
+  ""fieldName"": ""string"",
+  ""fieldDescription"": ""string"",
+  ""fieldType"": ""string"",
+  ""createdTs"": ""2022-09-29T11:33:24.073+00:00"",
+  ""updatedTs"": ""2022-09-29T11:33:24.073+00:00"",
+  ""createdBy"": ""string"",
+  ""updatedBy"": ""string"",
+  ""hidden"": true,
+  ""required"": true
+}]"
+40,40,40,40,40,40,40,40,40,40,41.0,,,users,drills,,,To add/update default submission fields,POST,,,"{
+  ""fieldId"": ""string"",
+  ""fieldName"": ""string"",
+  ""fieldDescription"": ""string"",
+  ""fieldType"": ""string"",
+  ""createdTs"": ""2022-09-29T11:33:24.073+00:00"",
+  ""updatedTs"": ""2022-09-29T11:33:24.073+00:00"",
+  ""createdBy"": ""string"",
+  ""updatedBy"": ""string"",
+  ""hidden"": true,
+  ""required"": true
+}",/api/v1/drills/submissionFields/default,200,"{
+  ""fieldId"": ""string"",
+  ""fieldName"": ""string"",
+  ""fieldDescription"": ""string"",
+  ""fieldType"": ""string"",
+  ""createdTs"": ""2022-09-29T11:33:24.073+00:00"",
+  ""updatedTs"": ""2022-09-29T11:33:24.073+00:00"",
+  ""createdBy"": ""string"",
+  ""updatedBy"": ""string"",
+  ""hidden"": true,
+  ""required"": true
+}"
+41,41,41,41,41,41,41,41,41,41,42.0,,,users,drills,,,To get drill submission fields,GET,,drillId,NA,/api/v1/drills/{drillId}/submissionFields,200,NA
+42,42,42,42,42,42,42,42,42,42,43.0,,,users,drills,,,To add/update submission fields,POST,,drillId,"{
+  ""createdBy"": ""string"",
+  ""createdTs"": ""2022-09-29T08:58:13.562Z"",
+  ""drillId"": ""string"",
+  ""fields"": ""string"",
+  ""guidelines"": ""string"",
+  ""updatedBy"": ""string"",
+  ""updatedTs"": ""2022-09-29T08:58:13.562Z""
+}",/api/v1/drills/{drillId}/submissionFields/configure,200,"{
+  ""createdBy"": ""string"",
+  ""createdTs"": ""2022-09-29T08:58:13.562Z"",
+  ""drillId"": ""string"",
+  ""fields"": ""string"",
+  ""guidelines"": ""string"",
+  ""updatedBy"": ""string"",
+  ""updatedTs"": ""2022-09-29T08:58:13.562Z""
+}"
+43,43,43,43,43,43,43,43,43,43,44.0,,,users,drills,,,To get submissions made under one drillId,GET,"judgeId,limit,offset,order,participantId,profile,teamId,theme",drillId,NA,/api/v1/drills/{drilId}/submissions,200,"{
+  ""totalRecordCount"": 0,
+  ""data"": []
+}"
+44,44,44,44,44,44,44,44,44,44,45.0,,,users,drills,,,To add or update submissions made under a drilId,POST,,drillId,"{
+  ""createdBy"": ""string"",
+  ""createdTs"": ""2022-09-29T08:58:13.562Z"",
+  ""drillId"": ""string"",
+  ""judgeId"": ""string"",
+  ""otherSubmission"": ""string"",
+  ""participantId"": ""string"",
+  ""presentation"": ""string"",
+  ""projectName"": ""string"",
+  ""snapshots"": ""string"",
+  ""sourceCode"": ""string"",
+  ""submissionDescription"": ""string"",
+  ""submissionId"": ""string"",
+  ""teamId"": ""string"",
+  ""theme"": ""string"",
+  ""updatedBy"": ""string"",
+  ""updatedTs"": ""2022-09-29T08:58:13.563Z"",
+  ""video"": ""string""
+}",/api/v1/drills/{drillId}/submissions,200,"{
+  ""createdBy"": ""string"",
+  ""createdTs"": ""2022-09-29T08:58:13.562Z"",
+  ""drillId"": ""string"",
+  ""judgeId"": ""string"",
+  ""otherSubmission"": ""string"",
+  ""participantId"": ""string"",
+  ""presentation"": ""string"",
+  ""projectName"": ""string"",
+  ""snapshots"": ""string"",
+  ""sourceCode"": ""string"",
+  ""submissionDescription"": ""string"",
+  ""submissionId"": ""string"",
+  ""teamId"": ""string"",
+  ""theme"": ""string"",
+  ""updatedBy"": ""string"",
+  ""updatedTs"": ""2022-09-29T08:58:13.563Z"",
+  ""video"": ""string""
+}"
+45,45,45,45,45,45,45,45,45,45,46.0,,,users,drills,,,To add/update assignment of judges,POST,judgeId,"drillId,submissionId",NA,/api/v1/drills/{drillId}/submissions/{submissionId}/assignments,200,NA
+46,46,46,46,46,46,46,46,46,46,47.0,Jobs Controller,,users,jobs,,Jobs Page,To search for jobs according to a query,GET,"query,uId",,NA,/api/v1/allJobs,200,"[
+  {
+    ""createdBy"": ""string"",
+    ""createdTs"": ""2022-09-30T04:48:46.151Z"",
+    ""isActive"": true,
+    ""isCompanyNameHidden"": true,
+    ""isSalaryHidden"": true,
+    ""jdLink"": ""string"",
+    ""jobApplicantCount"": 0,
+    ""jobCtcCurrency"": ""string"",
+    ""jobDescription"": ""string"",
+    ""jobDomain"": ""string"",
+    ""jobEsopAcceptance"": true,
+    ""jobId"": ""string"",
+    ""jobImageLink"": ""string"",
+    ""jobIndustryCategory"": ""string"",
+    ""jobKeywords"": ""string"",
+    ""jobLocation"": ""string"",
+    ""jobMaxCtcRange"": 0,
+    ""jobMaxYoe"": 0,
+    ""jobMinCtcRange"": 0,
+    ""jobMinYoe"": 0,
+    ""jobMusthave"": ""string"",
+    ""jobNoticePeriodAcceptable"": ""string"",
+    ""jobNumberOfVacancies"": 0,
+    ""jobPostedBy"": ""string"",
+    ""jobPriority"": ""string"",
+    ""jobRounds"": ""string"",
+    ""jobScreeningQuestions"": ""string"",
+    ""jobSkills"": ""string"",
+    ""jobTitle"": ""string"",
+    ""jobType"": ""string"",
+    ""otherTags"": ""string"",
+    ""partner"": {
+      ""createdBy"": ""string"",
+      ""createdTs"": ""2022-09-30T04:48:46.151Z"",
+      ""partnerDescription"": ""string"",
+      ""partnerEstablishmentDate"": ""string"",
+      ""partnerId"": ""string"",
+      ""partnerIndustry"": ""string"",
+      ""partnerLogoPath"": ""string"",
+      ""partnerName"": ""string"",
+      ""partnerSocialLinks"": ""string"",
+      ""partnerType"": ""string"",
+      ""updatedBy"": ""string"",
+      ""updatedTs"": ""2022-09-30T04:48:46.151Z""
+    },
+    ""partnerId"": ""string"",
+    ""partnerName"": ""string"",
+    ""updatedBy"": ""string"",
+    ""updatedTs"": ""2022-09-30T04:48:46.151Z""
+  }
+]"
+47,47,47,47,47,47,47,47,47,47,48.0,,,users,jobs,,,To add a job ,POST,,,jobDto,/api/v1/jobs,201-tbd,NA
+48,48,48,48,48,48,48,48,48,48,49.0,,,users,jobs,,Jobs Page,To get all headings for jobs,GET,,,NA,/api/v1/jobs/headings,200,"{
+  ""jobLocation"": [],
+  ""jobTitle"": [],
+  ""jobType"": []
+}"
+49,49,49,49,49,49,49,49,49,49,50.0,,,users,jobs,,,To get all jobs which fulfill the query parameters,GET,"isActive,jobLocation,jobMaxCtc,jobMaxYoe,jobMinCtc,jobMinYoe,jobSkills,jobTitle,jobType,limit,offset,order,profile",,NA,/api/v1/jobs/search,200,"{
+  ""data"": [
+    {
+      ""createdBy"": ""string"",
+      ""createdTs"": ""2022-09-30T04:48:46.157Z"",
+      ""isActive"": true,
+      ""isCompanyNameHidden"": true,
+      ""isSalaryHidden"": true,
+      ""jdLink"": ""string"",
+      ""jobApplicantCount"": 0,
+      ""jobCtcCurrency"": ""string"",
+      ""jobDescription"": ""string"",
+      ""jobDomain"": ""string"",
+      ""jobEsopAcceptance"": true,
+      ""jobId"": ""string"",
+      ""jobImageLink"": ""string"",
+      ""jobIndustryCategory"": ""string"",
+      ""jobLocation"": ""string"",
+      ""jobMaxCtcRange"": 0,
+      ""jobMaxYoe"": 0,
+      ""jobMinCtcRange"": 0,
+      ""jobMinYoe"": 0,
+      ""jobMusthave"": ""string"",
+      ""jobNoticePeriodAcceptable"": ""string"",
+      ""jobNumberOfVacancies"": 0,
+      ""jobPostedBy"": ""string"",
+      ""jobPriority"": ""string"",
+      ""jobRounds"": ""string"",
+      ""jobScreeningQuestions"": ""string"",
+      ""jobSkills"": ""string"",
+      ""jobTitle"": ""string"",
+      ""jobType"": ""string"",
+      ""otherTags"": ""string"",
+      ""partnerId"": ""string"",
+      ""partnerName"": ""string"",
+      ""salaryHidden"": true,
+      ""updatedBy"": ""string"",
+      ""updatedTs"": ""2022-09-30T04:48:46.157Z""
+    }
+  ],
+  ""totalRecordCount"": 0
+}"
+50,50,50,50,50,50,50,50,50,50,51.0,,,users,jobs,,,To create a job view,POST,,,"{
+  ""createdBy"": ""string"",
+  ""createdTs"": ""2022-09-30T04:48:46.116Z"",
+  ""dayOfWeek"": ""string"",
+  ""deviceInfo"": ""string"",
+  ""jobId"": ""string"",
+  ""jobName"": ""string"",
+  ""jobViewCount"": 0,
+  ""latitude"": ""string"",
+  ""location"": ""string"",
+  ""longitude"": ""string"",
+  ""monthOfYear"": ""string"",
+  ""uid"": ""string"",
+  ""year"": 0
+}",/api/v1/jobs/views/,200,"{
+  ""msg"": ""Job View successfully saved""
+}"
+51,51,51,51,51,51,51,51,51,51,52.0,,,users,jobs,,,To get a specific job details with jobid,GET,,jobId,NA,/api/v1/jobs/{jobId},200,"{
+  ""createdBy"": ""string"",
+  ""createdTs"": ""2022-09-30T04:48:46.165Z"",
+  ""isActive"": true,
+  ""isCompanyNameHidden"": true,
+  ""isSalaryHidden"": true,
+  ""jdLink"": ""string"",
+  ""jobApplicantCount"": 0,
+  ""jobCtcCurrency"": ""string"",
+  ""jobDescription"": ""string"",
+  ""jobDomain"": ""string"",
+  ""jobEsopAcceptance"": true,
+  ""jobId"": ""string"",
+  ""jobImageLink"": ""string"",
+  ""jobIndustryCategory"": ""string"",
+  ""jobKeywords"": ""string"",
+  ""jobLocation"": ""string"",
+  ""jobMaxCtcRange"": 0,
+  ""jobMaxYoe"": 0,
+  ""jobMinCtcRange"": 0,
+  ""jobMinYoe"": 0,
+  ""jobMusthave"": ""string"",
+  ""jobNoticePeriodAcceptable"": ""string"",
+  ""jobNumberOfVacancies"": 0,
+  ""jobPostedBy"": ""string"",
+  ""jobPriority"": ""string"",
+  ""jobRounds"": ""string"",
+  ""jobScreeningQuestions"": ""string"",
+  ""jobSkills"": ""string"",
+  ""jobTitle"": ""string"",
+  ""jobType"": ""string"",
+  ""otherTags"": ""string"",
+  ""partner"": {
+    ""createdBy"": ""string"",
+    ""createdTs"": ""2022-09-30T04:48:46.165Z"",
+    ""partnerDescription"": ""string"",
+    ""partnerEstablishmentDate"": ""string"",
+    ""partnerId"": ""string"",
+    ""partnerIndustry"": ""string"",
+    ""partnerLogoPath"": ""string"",
+    ""partnerName"": ""string"",
+    ""partnerSocialLinks"": ""string"",
+    ""partnerType"": ""string"",
+    ""updatedBy"": ""string"",
+    ""updatedTs"": ""2022-09-30T04:48:46.165Z""
+  },
+  ""partnerId"": ""string"",
+  ""partnerName"": ""string"",
+  ""updatedBy"": ""string"",
+  ""updatedTs"": ""2022-09-30T04:48:46.165Z""
+}"
+52,52,52,52,52,52,52,52,52,52,53.0,,,users,jobs,,,To update job status,PATCH,,jobId,NA,/api/v1/jobs/{jobId},200,NA
+53,53,53,53,53,53,53,53,53,53,54.0,,,users,jobs,,,To edit already posted job,PUT,,jobId,"{
+  ""createdBy"": ""string"",
+  ""createdTs"": ""2022-09-30T04:48:46.116Z"",
+  ""isActive"": true,
+  ""isCompanyNameHidden"": true,
+  ""isSalaryHidden"": true,
+  ""jdLink"": ""string"",
+  ""jobApplicantCount"": 0,
+  ""jobCtcCurrency"": ""string"",
+  ""jobDescription"": ""string"",
+  ""jobDomain"": ""string"",
+  ""jobEsopAcceptance"": true,
+  ""jobId"": ""eefe9b05-5d89-4901-aae0-f94f9f3ce10a"",
+  ""jobImageLink"": ""string"",
+  ""jobIndustryCategory"": ""string"",
+  ""jobKeywords"": ""string"",
+  ""jobLocation"": ""string"",
+  ""jobMaxCtcRange"": 0,
+  ""jobMaxYoe"": 0,
+  ""jobMinCtcRange"": 0,
+  ""jobMinYoe"": 0,
+  ""jobMusthave"": ""string"",
+  ""jobNoticePeriodAcceptable"": ""string"",
+  ""jobNumberOfVacancies"": 0,
+  ""jobPostedBy"": ""string"",
+  ""jobPriority"": ""string"",
+  ""jobRounds"": ""string"",
+  ""jobScreeningQuestions"": ""string"",
+  ""jobSkills"": ""string"",
+  ""jobTitle"": ""string"",
+  ""jobType"": ""string"",
+  ""otherTags"": ""string"",
+  ""partner"": {
+    ""createdBy"": ""string"",
+    ""createdTs"": ""2022-09-30T04:48:46.116Z"",
+    ""partnerDescription"": ""string"",
+    ""partnerEstablishmentDate"": ""string"",
+    ""partnerId"": ""string"",
+    ""partnerIndustry"": ""string"",
+    ""partnerLogoPath"": ""string"",
+    ""partnerName"": ""string"",
+    ""partnerSocialLinks"": ""string"",
+    ""partnerType"": ""string"",
+    ""updatedBy"": ""string"",
+    ""updatedTs"": ""2022-09-30T04:48:46.116Z""
+  },
+  ""partnerId"": ""string"",
+  ""partnerName"": ""string"",
+  ""updatedBy"": ""string"",
+  ""updatedTs"": ""2022-09-30T04:48:46.116Z""
+}",/api/v1/jobs/{jobId},200,NA
+54,54,54,54,54,54,54,54,54,54,55.0,,,users,jobs,,,To activate a job,PUT,,"action,jobId",NA,/api/v1/jobs/{jobId}/activate/{action},200,TRUE
+55,55,55,55,55,55,55,55,55,55,56.0,,,users,jobs,,,To check if a user has registered for a job,GET,uId,jobId,NA,/api/v1/jobs/{jobId}/applications,200,TRUE
+56,56,56,56,56,56,56,56,56,56,57.0,,,users,jobs,,,To get total number of views on a job-tbd,GET,uId,jobId,NA,/api/v1/jobs/{jobId}/views,200,"{
+  ""data"": [],
+  ""count"": 0
+}"
+57,57,57,57,57,57,57,57,57,57,58.0,SquadController,,users,squad,,,To fetch applications for squad program,GET,"query,squadId",,NA,/api/v1/squad,200,NA
+58,58,58,58,58,58,58,58,58,58,59.0,,,users,squad,,,To register for squad program,POST,,,"{
+  ""content"": ""string"",
+  ""createdby"": ""string"",
+  ""createdts"": ""2022-09-30T04:48:46.117Z"",
+  ""description"": ""string"",
+  ""domain"": ""string"",
+  ""endDate"": ""2022-09-30T04:48:46.117Z"",
+  ""logoPath"": ""string"",
+  ""managers"": ""string"",
+  ""modeOfDelivery"": ""string"",
+  ""numberOfDays"": 0,
+  ""oneLiner"": ""string"",
+  ""price"": ""string"",
+  ""registrationLink"": ""string"",
+  ""squadId"": ""string"",
+  ""squadName"": ""string"",
+  ""startDate"": ""2022-09-30T04:48:46.117Z"",
+  ""tags"": ""string"",
+  ""technology"": ""string"",
+  ""updatedby"": ""string"",
+  ""updatedts"": ""2022-09-30T04:48:46.118Z""
+}",/api/v1/squad,200,"{
+  ""msg"": ""Registered successfully. Welcome to Squad.""
+}"
+59,59,59,59,59,59,59,59,59,59,60.0,UploadController,,users,upload,,,To help users upload files for hackathon submissions,POST,"drillId,file,participantId,solutionType,teamId,theme",,NA,/api/v1/uploadFiles,200,NA
+60,60,60,60,60,60,60,60,60,60,61.0,ContactUsController,,users,contact,,,To get contact details of user,GET,,,NA,/api/v1/contactus,200,[]
+61,61,61,61,61,61,61,61,61,61,62.0,,,users,contact,,,To post contact details of users,POST,,,"{
+  ""contact"": ""string"",
+  ""createdby"": ""string"",
+  ""createdts"": ""2022-09-30T04:48:46.110Z"",
+  ""email"": ""string"",
+  ""message"": ""string"",
+  ""purposeToConnect"": ""string"",
+  ""queryId"": 0,
+  ""senderFullName"": ""string"",
+  ""visible"": true
+}",/api/v1/contactus,200,"{
+  ""contact"": ""string"",
+  ""createdby"": ""string"",
+  ""createdts"": ""2022-09-30T04:48:46.110Z"",
+  ""email"": ""string"",
+  ""message"": ""string"",
+  ""purposeToConnect"": ""string"",
+  ""queryId"": 0,
+  ""senderFullName"": ""string"",
+  ""visible"": true
+}"
+62,62,62,62,62,62,62,62,62,62,63.0,,,users,contact,,,To delete contact details of users,DELETE,id,action,NA,/api/v1/contactus/{action},200,NA
+63,63,63,63,63,63,63,63,63,63,64.0,CertificateGeneratorController,,users,certificate,,,To save certificate details,POST,,,"{
+  ""certificateUrl"": ""string"",
+  ""email"": ""string"",
+  ""eventId"": ""string"",
+  ""eventType"": ""string"",
+  ""positionType"": ""string""
+}",/api/v1/certificates,200,"{
+  ""msg"": ""Certificate details saved successfully""
+}"
+64,64,64,64,64,64,64,64,64,64,65.0,EventController,,,event,,,To delete an event,DELETE,,,"[
+  {
+    ""address"": ""string"",
+    ""agenda"": ""string"",
+    ""endDateTime"": ""string"",
+    ""eventCreatedby"": ""string"",
+    ""eventId"": 0,
+    ""eventUpdatedby"": ""string"",
+    ""eventUpdatedts"": ""2022-09-30"",
+    ""location"": ""string"",
+    ""mode"": ""string"",
+    ""owner"": ""string"",
+    ""speaker"": ""string"",
+    ""startDateTime"": ""string"",
+    ""status"": ""string"",
+    ""topic"": ""string"",
+    ""type"": ""string""
+  }
+]",/api/v1/events,200,NA
+65,65,65,65,65,65,65,65,65,65,66.0,,,users,event,,,To get event details ,GET,eventId,,NA,/api/v1/events,200,"[
+  {
+    ""address"": ""string"",
+    ""agenda"": ""string"",
+    ""endDateTime"": ""string"",
+    ""eventCreatedby"": ""string"",
+    ""eventCreatedts"": ""2022-09-30T11:24:51.746Z"",
+    ""eventId"": 0,
+    ""eventUpdatedby"": ""string"",
+    ""eventUpdatedts"": ""2022-09-30T11:24:51.746Z"",
+    ""location"": ""string"",
+    ""mode"": ""string"",
+    ""owner"": ""string"",
+    ""speaker"": ""string"",
+    ""startDateTime"": ""string"",
+    ""status"": ""string"",
+    ""topic"": ""string"",
+    ""type"": ""string""
+  }
+]"
+66,66,66,66,66,66,66,66,66,66,67.0,,,,event,,,To add/update events,POST,,,"{
+  ""address"": ""string"",
+  ""agenda"": ""string"",
+  ""endDateTime"": ""string"",
+  ""eventCreatedby"": ""string"",
+  ""eventId"": 0,
+  ""eventUpdatedby"": ""string"",
+  ""eventUpdatedts"": ""2022-09-30"",
+  ""location"": ""string"",
+  ""mode"": ""string"",
+  ""owner"": ""string"",
+  ""speaker"": ""string"",
+  ""startDateTime"": ""string"",
+  ""status"": ""string"",
+  ""topic"": ""string"",
+  ""type"": ""string""
+}",/api/v1/events,200,1
+67,67,67,67,67,67,67,67,67,67,68.0,,,,event,,,To update events,PUT,,,"[
+  {
+    ""address"": ""string"",
+    ""agenda"": ""string"",
+    ""endDateTime"": ""string"",
+    ""eventCreatedby"": ""string"",
+    ""eventId"": 0,
+    ""eventUpdatedby"": ""string"",
+    ""eventUpdatedts"": ""2022-09-30"",
+    ""location"": ""string"",
+    ""mode"": ""string"",
+    ""owner"": ""string"",
+    ""speaker"": ""string"",
+    ""startDateTime"": ""string"",
+    ""status"": ""string"",
+    ""topic"": ""string"",
+    ""type"": ""string""
+  }
+]",/api/v1/events,200,SUCCESS
+68,68,68,68,68,68,68,68,68,68,69.0,,,,,,,,,,,NA,,,NA
+69,69,69,69,69,69,69,69,69,69,70.0,ApplicationController,,users,,,,To fetch application status for a job for a particular uId,GET,"jobId,uId",,NA,/api/v1/jobs/application,200,"[
+  {
+    ""applicationId"": 0,
+    ""appliedTs"": ""2022-09-30T11:24:51.803Z"",
+    ""createdby"": ""string"",
+    ""createdts"": ""2022-09-30T11:24:51.803Z"",
+    ""currentStatus"": ""string"",
+    ""jobId"": ""string"",
+    ""uid"": ""string"",
+    ""updatedby"": ""string"",
+    ""updatedts"": ""2022-09-30T11:24:51.803Z""
+  }
+]
+"
+70,70,70,70,70,70,70,70,70,70,71.0,,,users,,,,To apply for a job,POST,,,"{
+  ""applicationId"": 0,
+  ""appliedTs"": ""2022-09-30T11:24:51.492Z"",
+  ""createdBy"": ""string"",
+  ""createdTs"": ""2022-09-30T11:24:51.492Z"",
+  ""currentStatus"": ""string"",
+  ""jobId"": ""string"",
+  ""uid"": ""string"",
+  ""updatedBy"": ""string"",
+  ""updatedTs"": ""2022-09-30T11:24:51.492Z""
+}",/api/v1/jobs/application,200,NA
+71,71,71,71,71,71,71,71,71,71,72.0,,,users,,,,To filter applications for a job ,GET,filter,,NA,/api/v1/jobs/application/filter,200,"[
+  {
+    ""applicationId"": 0,
+    ""applicationTrackId"": 0,
+    ""feedback"": ""string"",
+    ""status"": ""string"",
+    ""updatedby"": ""string"",
+    ""updatedts"": ""2022-09-30T11:24:51.810Z""
+  }
+]"
+72,72,72,72,72,72,72,72,72,72,73.0,,,users,,,,"To get the number of jobs applied to,applications pending,offers closed and interviews pending for a user",GET,uId,,NA,/api/v1/jobs/application/stats,200,"{
+  ""applicationPending"": 0,
+  ""offersClosed"": 0,
+  ""jobApplied"": 0,
+  ""interviewsPending"": 0
+}"
+73,73,73,73,73,73,73,73,73,73,74.0,,,users,,,,To get the status of all job listings available for a user-tbd,GET,,,NA,/api/v1/jobs/application/statusenum,200,"[
+  {
+    ""order"": ""1"",
+    ""status"": ""APPLIED""
+  },
+  {
+    ""order"": ""2"",
+    ""status"": ""SHORTLISTED""
+  },
+  {
+    ""order"": ""3"",
+    ""status"": ""APPLICATION SENT""
+  }]"
+74,74,74,74,74,74,74,74,74,74,75.0,,,,,,,To get a specific application for one job,GET,jobId,applicationId,NA,/api/v1/jobs/application/{applicationId},200,NA
+75,75,75,75,75,75,75,75,75,75,76.0,,,,,,,To update application status,PUT,applicationId,,payload,/api/v1/jobs/application/{applicationId},201,NA
+76,76,76,76,76,76,76,76,76,76,77.0,,,,,,,To get complete applications for a job,GET,"jobId,uId",,NA,/api/v1/jobs/completeapplication,200,"[
+  {
+    ""applicationId"": 0,
+    ""appliedTs"": ""2022-09-30T11:24:51.823Z"",
+    ""createdBy"": ""string"",
+    ""createdTs"": ""2022-09-30T11:24:51.823Z"",
+    ""currentStatus"": ""string"",
+    ""jobId"": ""string"",
+    ""jobImg"": ""string"",
+    ""jobTitle"": ""string"",
+    ""partnerName"": ""string"",
+    ""resumeLink"": ""string"",
+    ""updatedBy"": ""string"",
+    ""updatedTs"": ""2022-09-30T11:24:51.823Z"",
+    ""userFullName"": ""string"",
+    ""userId"": ""string""
+  }
+]"
+77,77,77,77,77,77,77,77,77,77,78.0,NotificationController,,,,,,To add/update a notification,POST,,,"{
+  ""createdby"": ""string"",
+  ""createdts"": ""2022-09-30T11:24:51.493Z"",
+  ""message"": ""string"",
+  ""notificationId"": 0,
+  ""notificationType"": ""string"",
+  ""oneLiner"": ""string"",
+  ""read"": true,
+  ""receiverUid"": ""string"",
+  ""senderUid"": ""string"",
+  ""updatedby"": ""string"",
+  ""updatedts"": ""2022-09-30T11:24:51.493Z""
+}",/api/v1/notification,200,"{""msg"":""{msg=Successful request}""}"
+78,78,78,78,78,78,78,78,78,78,79.0,,,,,,,To fetch only particular type of notifications,GET,messageType,,NA,/api/v1/notification/,200,NA
+79,79,79,79,79,79,79,79,79,79,80.0,,,,,,,To get list of notifications-tbd,PUT,,action,"{
+  ""createdby"": ""string"",
+  ""createdts"": ""2022-09-30T11:24:51.494Z"",
+  ""message"": ""string"",
+  ""notificationId"": 0,
+  ""notificationType"": ""string"",
+  ""oneLiner"": ""string"",
+  ""read"": true,
+  ""receiverUid"": ""string"",
+  ""senderUid"": ""string"",
+  ""updatedby"": ""string"",
+  ""updatedts"": ""2022-09-30T11:24:51.494Z""
+}",/api/v1/notification/{action},200,"{
+  ""msg"": ""All notifications read successfully""
+}"
+80,80,80,80,80,80,80,80,80,80,81.0,,,,,,,To get list of notifications for a user/receiver,GET,,receiverUid,NA,/api/v1/notification/{receiverUid},200,"{
+  ""data"": [],
+  ""count"": 0
+}"
+81,81,81,81,81,81,81,81,81,81,82.0,PartnerController,,,,,,To get partner details,GET,"mode,partnerId",,NA,/api/v1/partners,200,"[
+  {
+    ""createdBy"": ""string"",
+    ""createdTs"": ""2022-10-01T04:39:54.900Z"",
+    ""partnerDescription"": ""string"",
+    ""partnerEstablishmentDate"": ""string"",
+    ""partnerId"": ""string"",
+    ""partnerIndustry"": ""string"",
+    ""partnerLogoPath"": ""string"",
+    ""partnerName"": ""string"",
+    ""partnerSocialLinks"": ""string"",
+    ""partnerType"": ""string"",
+    ""updatedBy"": ""string"",
+    ""updatedTs"": ""2022-10-01T04:39:54.900Z""
+  }
+]"
+82,82,82,82,82,82,82,82,82,82,83.0,,,,,,,To save partner details,POST,,,"{
+  ""createdBy"": ""string"",
+  ""createdTs"": ""2022-10-01T04:39:54.739Z"",
+  ""partnerDescription"": ""string"",
+  ""partnerEstablishmentDate"": ""string"",
+  ""partnerId"": ""string"",
+  ""partnerIndustry"": ""string"",
+  ""partnerLogoPath"": ""string"",
+  ""partnerName"": ""string"",
+  ""partnerSocialLinks"": ""string"",
+  ""partnerType"": ""string"",
+  ""updatedBy"": ""string"",
+  ""updatedTs"": ""2022-10-01T04:39:54.739Z""
+}",/api/v1/partners,201,"{
+  ""partnerId"": ""a8030704-abab-46f5-845e-b2d40aedc96f"",
+  ""partnerName"": ""string"",
+  ""partnerDescription"": ""string"",
+  ""partnerSocialLinks"": ""string"",
+  ""partnerType"": ""string"",
+  ""partnerIndustry"": ""string"",
+  ""partnerEstablishmentDate"": ""string"",
+  ""partnerLogoPath"": ""string"",
+  ""createdTs"": ""2022-10-01T04:39:54.739+00:00"",
+  ""updatedTs"": ""2022-10-01T04:39:54.739+00:00"",
+  ""createdBy"": ""string"",
+  ""updatedBy"": ""string""
+}"
+83,83,83,83,83,83,83,83,83,83,84.0,,,,,,,To update patners details,PUT,,partnerId,"{
+  ""createdBy"": ""string"",
+  ""createdTs"": ""2022-10-01T04:39:54.739Z"",
+  ""partnerDescription"": ""string"",
+  ""partnerEstablishmentDate"": ""string"",
+  ""partnerId"": ""a8030704-abab-46f5-845e-b2d40aedc96f"",
+  ""partnerIndustry"": ""string"",
+  ""partnerLogoPath"": ""string"",
+  ""partnerName"": ""string"",
+  ""partnerSocialLinks"": ""string"",
+  ""partnerType"": ""string"",
+  ""updatedBy"": ""string"",
+  ""updatedTs"": ""2022-10-01T04:39:54.739Z""
+}",/api/v1/partners/{partnerId},200,NA
+84,84,84,84,84,84,84,84,84,84,85.0,,,,,,,,,,,NA,,,NA
+85,85,85,85,85,85,85,85,85,85,86.0,UserPlatformIntegrationController,,users,,,,To check if a user's profile is integrated with other platforms,GET,uId,,NA,/api/v1/platformintegration,200,"[
+  {
+    ""platformIntegrationId"": 0,
+    ""platformName"": ""string"",
+    ""profileIntegrated"": true,
+    ""profileLink"": ""string"",
+    ""profileVerified"": true,
+    ""uid"": ""string"",
+    ""userCreatedby"": ""string"",
+    ""userCreatedts"": ""2022-10-01T04:39:54.904Z"",
+    ""userUpdatedby"": ""string"",
+    ""userUpdatedts"": ""2022-10-01T04:39:54.904Z""
+  }
+]"
+86,86,86,86,86,86,86,86,86,86,87.0,,,users,,,,To add/update platform integration details,POST,,,"{
+  ""platformIntegrationId"": 0,
+  ""platformName"": ""string"",
+  ""profileIntegrated"": true,
+  ""profileLink"": ""string"",
+  ""profileVerified"": true,
+  ""uid"": ""string"",
+  ""userCreatedby"": ""string"",
+  ""userCreatedts"": ""2022-10-01T04:39:54.739Z"",
+  ""userUpdatedby"": ""string"",
+  ""userUpdatedts"": ""2022-10-01T04:39:54.739Z""
+}",/api/v1/platformintegration,200,"{
+  ""platformIntegrationId"": 1,
+  ""platformName"": ""string"",
+  ""profileLink"": ""string"",
+  ""profileVerified"": true,
+  ""userCreatedby"": ""string"",
+  ""userCreatedts"": ""2022-10-01T07:18:52.252+00:00"",
+  ""userUpdatedby"": ""string"",
+  ""userUpdatedts"": ""2022-10-01T07:18:52.252+00:00"",
+  ""profileIntegrated"": true,
+  ""uid"": ""8af2b4c5-6bb5-4985-b557-abbec4a5a4b7""
+}"
+87,87,87,87,87,87,87,87,87,87,88.0,SkillsLookupController,,,,,,To delete skills,DELETE,skillLookupId,,NA,/api/v1/skills/,200,NA
+88,88,88,88,88,88,88,88,88,88,89.0,,,,,,,To fetch skills,GET,initialLetters,,NA,/api/v1/skills/,200,"[
+  ""string""
+]"
+89,89,89,89,89,89,89,89,89,89,90.0,,,,,,,To add/update a new skill,POST,,,"{
+  ""createdby"": ""string"",
+  ""createdts"": ""2022-10-01T04:39:54.740Z"",
+  ""skillId"": 0,
+  ""skillName"": ""string"",
+  ""skillTags"": ""string"",
+  ""updatedby"": ""string"",
+  ""updatedts"": ""2022-10-01T04:39:54.740Z""
+}",/api/v1/skills/,200,Skill saved/updated successfully
+90,90,90,90,90,90,90,90,90,90,91.0,StatsController,,,,,,To get statistics,GET,rangeToFetch,,NA,/api/v1/stats,200,"[
+  {
+    ""joiningsDone"": 0,
+    ""numberOfColleges"": 0,
+    ""numberOfFresherDrives"": 0,
+    ""numberOfFresherHired"": 0,
+    ""numberOfFreshersUsers"": 0,
+    ""numberOfHackathons"": 0,
+    ""numberOfInternsHired"": 0,
+    ""numberOfJobPosted"": 0,
+    ""numberOfPartners"": 0,
+    ""numberOfProfessionalsUsers"": 0,
+    ""numberOfSquadPrograms"": 0,
+    ""numberOfStudentsInSquad"": 0,
+    ""numberOfUsersOnPlatform"": 0,
+    ""numberOfmeetups"": 0,
+    ""recordInsertedts"": ""2022-10-01T04:39:54.915Z"",
+    ""statsId"": 0,
+    ""userUpdatedby"": ""string""
+  }
+]"
+91,91,91,91,91,91,91,91,91,91,92.0,,,,,,,tbd,GET,,,NA,/api/v1/stats/cumulative,200,"{
+  ""numberOfActiveJobs"": ""0"",
+  ""numberOfUsers"": ""1"",
+  ""numberofJobViews"": ""1"",
+  ""numberOfJobs"": ""0"",
+  ""numberofSiteViews"": ""0""
+}"
+92,92,92,92,92,92,92,92,92,92,93.0,,,,,,,To get list of participants in hackathons,GET,,,NA,/api/v1/stats/drills/participants,200,"{
+  ""data"": [],
+  ""countOfDrillParticipants"": 0,
+  ""countOfUserNotInDrill"": 0
+}"
+93,93,93,93,93,93,93,93,93,93,94.0,,,,,,,To get platform statistics,GET,pageName,,NA,/api/v1/stats/landingpage,200,"{
+  ""joiningsDone"": 0,
+  ""numberOfColleges"": 0,
+  ""numberOfFresherDrives"": 0,
+  ""numberOfFresherHired"": 0,
+  ""numberOfFreshersUsers"": 0,
+  ""numberOfHackathons"": 0,
+  ""numberOfInternsHired"": 0,
+  ""numberOfJobPosted"": 0,
+  ""numberOfPartners"": 0,
+  ""numberOfProfessionalsUsers"": 0,
+  ""numberOfSquadPrograms"": 0,
+  ""numberOfStudentsInSquad"": 0,
+  ""numberOfUsersOnPlatform"": 0,
+  ""numberOfmeetups"": 0,
+  ""recordInsertedts"": ""2022-10-01T04:39:54.917Z"",
+  ""statsId"": 0,
+  ""userUpdatedby"": ""string""
+}"
+94,94,94,94,94,94,94,94,94,94,95.0,,,,,,,,,,,NA,,,NA
+95,95,95,95,95,95,95,95,95,95,96.0,,,,,,,To save platform statistics,POST,,,"{
+  ""joiningsDone"": 0,
+  ""numberOfColleges"": 0,
+  ""numberOfFresherDrives"": 0,
+  ""numberOfFresherHired"": 0,
+  ""numberOfFreshersUsers"": 0,
+  ""numberOfHackathons"": 0,
+  ""numberOfInternsHired"": 0,
+  ""numberOfJobPosted"": 0,
+  ""numberOfPartners"": 0,
+  ""numberOfProfessionalsUsers"": 0,
+  ""numberOfSquadPrograms"": 0,
+  ""numberOfStudentsInSquad"": 0,
+  ""numberOfUsersOnPlatform"": 0,
+  ""numberOfmeetups"": 0,
+  ""recordInsertedts"": ""2022-10-01T04:39:54.740Z"",
+  ""statsId"": 0,
+  ""userUpdatedby"": ""string""
+}",/api/v1/stats/landingpage,200,TRUE
+96,96,96,96,96,96,96,96,96,96,97.0,SubscriptionController,,,,,,To get subscriptions,GET,,,NA,/api/v1/subscription,200,"[
+  {
+    ""active"": true,
+    ""component"": ""string"",
+    ""componentId"": ""string"",
+    ""createdby"": ""string"",
+    ""createdts"": ""2022-10-01T04:39:54.920Z"",
+    ""subscriptionEndDt"": ""2022-10-01T04:39:54.920Z"",
+    ""subscriptionId"": ""string"",
+    ""subscriptionStartDt"": ""2022-10-01T04:39:54.920Z"",
+    ""uid"": ""string"",
+    ""unsubscribtionDt"": ""2022-10-01T04:39:54.920Z"",
+    ""updatedBy"": ""string"",
+    ""updatedTs"": ""2022-10-01T04:39:54.920Z""
+  }
+]"
+97,97,97,97,97,97,97,97,97,97,98.0,,,,,,,To add/update subscriptions,POST,,,"{
+  ""active"": true,
+  ""component"": ""string"",
+  ""componentId"": ""string"",
+  ""createdby"": ""string"",
+  ""createdts"": ""2022-10-01T04:39:54.740Z"",
+  ""subscriptionEndDt"": ""2022-10-01T04:39:54.740Z"",
+  ""subscriptionId"": ""string"",
+  ""subscriptionStartDt"": ""2022-10-01T04:39:54.740Z"",
+  ""uid"": ""string"",
+  ""unsubscribtionDt"": ""2022-10-01T04:39:54.740Z"",
+  ""updatedBy"": ""string"",
+  ""updatedTs"": ""2022-10-01T04:39:54.740Z""
+}",/api/v1/subscription,200,"{
+  ""active"": true,
+  ""component"": ""string"",
+  ""componentId"": ""string"",
+  ""createdby"": ""string"",
+  ""createdts"": ""2022-10-01T04:39:54.740Z"",
+  ""subscriptionEndDt"": ""2022-10-01T04:39:54.740Z"",
+  ""subscriptionId"": ""string"",
+  ""subscriptionStartDt"": ""2022-10-01T04:39:54.740Z"",
+  ""uid"": ""string"",
+  ""unsubscribtionDt"": ""2022-10-01T04:39:54.740Z"",
+  ""updatedBy"": ""string"",
+  ""updatedTs"": ""2022-10-01T04:39:54.740Z""
+}"
+98,98,98,98,98,98,98,98,98,98,99.0,,,,,,,To delete subscription,DELETE,,subscriptionId,NA,/api/v1/subscription/{subscriptionId},200,Deleted Successfully
+99,99,99,99,99,99,99,99,99,99,100.0,,,,,,,To update a subscription,PUT,,"subscriptionId,action",NA,/api/v1/subscription/{subscriptionId}/{action},200,NA
+100,100,100,100,100,100,100,100,100,100,101.0,TestimonialController,,,,,,To delete testimonials,DELETE,id,,NA,/api/v1/testimonial,200,NA
+101,101,101,101,101,101,101,101,101,101,102.0,,,,,,,To get testimonials,GET,,,NA,/api/v1/testimonial,200,"[
+  {
+    ""postedByUserDesignation"": ""string"",
+    ""postedByUsername"": ""string"",
+    ""postedContent"": ""string"",
+    ""postedDate"": ""2022-10-01T04:39:54.925Z"",
+    ""recordInsertedts"": ""2022-10-01T04:39:54.925Z"",
+    ""testimonialPostId"": 0,
+    ""userUpdatedby"": ""string""
+  }
+]"
+102,102,102,102,102,102,102,102,102,102,103.0,,,,,,,To add/update testimonials,POST,,,"{
+  ""postedByUserDesignation"": ""string"",
+  ""postedByUsername"": ""string"",
+  ""postedContent"": ""string"",
+  ""postedDate"": ""2022-10-01T04:39:54.740Z"",
+  ""recordInsertedts"": ""2022-10-01T04:39:54.740Z"",
+  ""testimonialPostId"": 0,
+  ""userUpdatedby"": ""string""
+}",/api/v1/testimonial,200,"{
+  ""testimonialPostId"": 1,
+  ""postedDate"": ""2022-10-01T04:39:54.740+00:00"",
+  ""postedByUsername"": ""string"",
+  ""postedByUserDesignation"": ""string"",
+  ""postedContent"": ""string"",
+  ""userUpdatedby"": ""string"",
+  ""recordInsertedts"": ""2022-10-01T12:01:28.843+00:00""
+}"
+103,103,103,103,103,103,103,103,103,103,104.0,CommonController,,users,,,,To get college details,GET,,,NA,/api/v1/common/college,200,"{
+  ""college"": [
+    ""{id=1, college=string, tags=string,m,n,o,p, createdts=2022-09-26 13:47:30.847, updatedts=2022-09-26 13:47:30.847, createdby=string, updatedby=string}"",
+    ""{id=2, college=string, tags=string, createdts=2022-09-28 11:54:30.374, updatedts=2022-09-28 11:54:30.374, createdby=string, updatedby=string}""
+  ]
+}"
+104,104,104,104,104,104,104,104,104,104,105.0,,,users,,,,To add/update college details,POST,,,"{
+  ""college"": ""string"",
+  ""createdby"": ""string"",
+  ""createdts"": ""2022-10-01T04:39:54.731Z"",
+  ""id"": 0,
+  ""tags"": ""string"",
+  ""updatedby"": ""string"",
+  ""updatedts"": ""2022-10-01T04:39:54.731Z""
+}",/api/v1/common/college,200,"{
+  ""id"": 3,
+  ""college"": ""string"",
+  ""tags"": ""string"",
+  ""createdts"": ""2022-10-01T12:37:08.117+00:00"",
+  ""updatedts"": ""2022-10-01T12:37:08.117+00:00"",
+  ""createdby"": ""string"",
+  ""updatedby"": ""string""
+}"
+105,105,105,105,105,105,105,105,105,105,106.0,,,users,,,,To get company details,GET,,,NA,/api/v1/common/company,200,"{
+  ""company"": [
+    ""{id=1, company=string, tags=string, createdts=2022-09-26 13:48:10.215, updatedts=2022-09-26 13:48:10.215, createdby=string, updatedby=string,p,q,r}""
+  ]
+}"
+106,106,106,106,106,106,106,106,106,106,107.0,,,users,,,,To add/update company details,POST,,,"{
+  ""company"": ""string"",
+  ""createdby"": ""string"",
+  ""createdts"": ""2022-10-01T04:39:54.731Z"",
+  ""id"": 0,
+  ""tags"": ""string"",
+  ""updatedby"": ""string"",
+  ""updatedts"": ""2022-10-01T04:39:54.731Z""
+}",/api/v1/common/company,200,"{
+  ""id"": 2,
+  ""company"": ""string"",
+  ""tags"": ""string"",
+  ""createdts"": ""2022-10-01T12:39:44.161+00:00"",
+  ""updatedts"": ""2022-10-01T12:39:44.161+00:00"",
+  ""createdby"": ""string"",
+  ""updatedby"": ""string""
+}"
+107,107,107,107,107,107,107,107,107,107,108.0,,,users,,,,To get job designation details,GET,,,NA,/api/v1/common/jobdesignation,200,"{
+  ""job designation"": [
+    ""{id=1, jobdesignation=string,b,c,d,e, tags=string, createdts=2022-09-26 13:48:37.304, updatedts=2022-09-26 13:48:37.304, createdby=string, updatedby=string}""
+  ]"
+108,108,108,108,108,108,108,108,108,108,109.0,,,users,,,,To add/update job designation details,POST,,,"{
+  ""createdby"": ""string"",
+  ""createdts"": ""2022-10-01T04:39:54.731Z"",
+  ""id"": 0,
+  ""jobdesignation"": ""string"",
+  ""tags"": ""string"",
+  ""updatedby"": ""string"",
+  ""updatedts"": ""2022-10-01T04:39:54.731Z""
+}",/api/v1/common/jobdesignation,200,"{
+  ""id"": 2,
+  ""jobdesignation"": ""string"",
+  ""tags"": ""string"",
+  ""createdts"": ""2022-10-01T12:42:23.055+00:00"",
+  ""updatedts"": ""2022-10-01T12:42:23.055+00:00"",
+  ""createdby"": ""string"",
+  ""updatedby"": ""string""
+}"
+109,109,109,109,109,109,109,109,109,109,110.0,,,users,,,,To get location details,GET,countryCode,,NA,/api/v1/common/location,200,[]
+110,110,110,110,110,110,110,110,110,110,111.0,,,users,,,,To add/update location details,POST,,,"{
+  ""city"": ""string"",
+  ""countryCode"": ""string"",
+  ""createdts"": ""2022-10-01T04:39:54.732Z"",
+  ""id"": 0,
+  ""locality"": ""string"",
+  ""state"": ""string"",
+  ""updatedts"": ""2022-10-01T04:39:54.732Z"",
+  ""zipcode"": ""string""
+}",/api/v1/common/location,200,"{
+  ""id"": 1,
+  ""countryCode"": ""string"",
+  ""state"": ""string"",
+  ""city"": ""string"",
+  ""locality"": ""string"",
+  ""zipcode"": ""string"",
+  ""createdts"": ""2022-10-01T12:47:22.188+00:00"",
+  ""updatedts"": ""2022-10-01T12:47:22.188+00:00""
+}"
+111,111,111,111,111,111,111,111,111,111,112.0,,,users,,,,To save page view,POST,,,"{
+  ""clientIpaddress"": ""string"",
+  ""createdTs"": ""2022-10-03T02:36:19.625Z"",
+  ""dayOfWeek"": ""string"",
+  ""deviceInfo"": ""string"",
+  ""latitude"": ""string"",
+  ""location"": ""string"",
+  ""longitude"": ""string"",
+  ""monthOfYear"": ""string"",
+  ""pageViewCount"": 0,
+  ""page_name"": ""string"",
+  ""uid"": ""string"",
+  ""utmCampaign"": ""string"",
+  ""utmContent"": ""string"",
+  ""utmId"": ""string"",
+  ""utmMedium"": ""string"",
+  ""utmSource"": ""string"",
+  ""utmTerm"": ""string"",
+  ""year"": 0
+}",/api/v1/common/pages,200,"{
+  ""msg"": ""Page view saved""
+}"
+112,112,112,112,112,112,112,112,112,112,113.0,,,users,,,,To get technology options,GET,,,NA,/api/v1/common/technology,200,"{
+  ""technology"": [
+    ""{id=1, technology=xyz,abc, tags=xyz, createdts=2022-09-22 16:54:12.335, updatedts=2022-09-22 16:54:12.335, createdby=string, updatedby=string}""
+  ]
+}"
+113,113,113,113,113,113,113,113,113,113,114.0,,,users,,,,To add/update new technology options,POST,,,"{
+  ""createdby"": ""string"",
+  ""createdts"": ""2022-10-03T02:36:19.625Z"",
+  ""id"": 0,
+  ""tags"": ""string"",
+  ""technology"": ""string"",
+  ""updatedby"": ""string"",
+  ""updatedts"": ""2022-10-03T02:36:19.625Z""
+}",/api/v1/common/technology,200,"{
+  ""id"": 2,
+  ""technology"": ""string"",
+  ""tags"": ""string"",
+  ""createdts"": ""2022-10-03T02:40:21.687+00:00"",
+  ""updatedts"": ""2022-10-03T02:40:21.687+00:00"",
+  ""createdby"": ""string"",
+  ""updatedby"": ""string""
+}"
+114,114,114,114,114,114,114,114,114,114,115.0,,,users,,,,To get timezones,GET,,,NA,/api/v1/common/timezones,200,"{
+  ""Africa/Abidjan"": ""(UTC+00:00)"",
+  ""Africa/Accra"": ""(UTC+00:00)"",
+  ""Africa/Addis_Ababa"": ""(UTC+03:00)"",
+  ""Africa/Algiers"": ""(UTC+01:00)"",
+  ""Africa/Asmara"": ""(UTC+03:00)"",
+  ""Africa/Asmera"": ""(UTC+03:00)"",
+  ""Africa/Bamako"": ""(UTC+00:00)"",
+  ""Africa/Bangui"": ""(UTC+01:00)"",
+  ""Africa/Banjul"": ""(UTC+00:00)"",
+  ""Africa/Bissau"": ""(UTC+00:00)"",
+  ""Africa/Blantyre"": ""(UTC+02:00)"",
+  ""Africa/Brazzaville"": ""(UTC+01:00)"",
+  ""Africa/Bujumbura"": ""(UTC+02:00)"",
+  ""Africa/Cairo"": ""(UTC+02:00)"",
+  ""Africa/Casablanca"": ""(UTC+01:00)"",
+  ""Africa/Ceuta"": ""(UTC+02:00)"",
+  ""Africa/Conakry"": ""(UTC+00:00)"",
+  ""Africa/Dakar"": ""(UTC+00:00)"",
+  ""Africa/Dar_es_Salaam"": ""(UTC+03:00)"",
+  ""Africa/Djibouti"": ""(UTC+03:00)"",
+  ""Africa/Douala"": ""(UTC+01:00)"",
+  ""Africa/El_Aaiun"": ""(UTC+01:00)"",
+  ""Africa/Freetown"": ""(UTC+00:00)"",
+  ""Africa/Gaborone"": ""(UTC+02:00)"",
+  ""Africa/Harare"": ""(UTC+02:00)"",
+  ""Africa/Johannesburg"": ""(UTC+02:00)"",
+  ""Africa/Juba"": ""(UTC+02:00)"",
+  ""Africa/Kampala"": ""(UTC+03:00)"",
+  ""Africa/Khartoum"": ""(UTC+02:00)"",
+  ""Africa/Kigali"": ""(UTC+02:00)"",
+  ""Africa/Kinshasa"": ""(UTC+01:00)"",
+  ""Africa/Lagos"": ""(UTC+01:00)"",
+  ""Africa/Libreville"": ""(UTC+01:00)"",
+  ""Africa/Lome"": ""(UTC+00:00)"",
+  ""Africa/Luanda"": ""(UTC+01:00)"",
+  ""Africa/Lubumbashi"": ""(UTC+02:00)"",
+  ""Africa/Lusaka"": ""(UTC+02:00)"",
+  ""Africa/Malabo"": ""(UTC+01:00)"",
+  ""Africa/Maputo"": ""(UTC+02:00)"",
+  ""Africa/Maseru"": ""(UTC+02:00)"",
+  ""Africa/Mbabane"": ""(UTC+02:00)"",
+  ""Africa/Mogadishu"": ""(UTC+03:00)"",
+  ""Africa/Monrovia"": ""(UTC+00:00)"",
+  ""Africa/Nairobi"": ""(UTC+03:00)"",
+  ""Africa/Ndjamena"": ""(UTC+01:00)"",
+  ""Africa/Niamey"": ""(UTC+01:00)"",
+  ""Africa/Nouakchott"": ""(UTC+00:00)"",
+  ""Africa/Ouagadougou"": ""(UTC+00:00)"",
+  ""Africa/Porto-Novo"": ""(UTC+01:00)"",
+  ""Africa/Sao_Tome"": ""(UTC+00:00)"",
+  ""Africa/Timbuktu"": ""(UTC+00:00)"",
+  ""Africa/Tripoli"": ""(UTC+02:00)"",
+  ""Africa/Tunis"": ""(UTC+01:00)"",
+  ""Africa/Windhoek"": ""(UTC+02:00)"",
+  ""America/Adak"": ""(UTC-09:00)"",
+  ""America/Anchorage"": ""(UTC-08:00)"",
+  ""America/Anguilla"": ""(UTC-04:00)"",
+  ""America/Antigua"": ""(UTC-04:00)"",
+  ""America/Araguaina"": ""(UTC-03:00)"",
+  ""America/Argentina/Buenos_Aires"": ""(UTC-03:00)"",
+  ""America/Argentina/Catamarca"": ""(UTC-03:00)"",
+  ""America/Argentina/ComodRivadavia"": ""(UTC-03:00)"",
+  ""America/Argentina/Cordoba"": ""(UTC-03:00)"",
+  ""America/Argentina/Jujuy"": ""(UTC-03:00)"",
+  ""America/Argentina/La_Rioja"": ""(UTC-03:00)"",
+  ""America/Argentina/Mendoza"": ""(UTC-03:00)"",
+  ""America/Argentina/Rio_Gallegos"": ""(UTC-03:00)"",
+  ""America/Argentina/Salta"": ""(UTC-03:00)"",
+  ""America/Argentina/San_Juan"": ""(UTC-03:00)"",
+  ""America/Argentina/San_Luis"": ""(UTC-03:00)"",
+  ""America/Argentina/Tucuman"": ""(UTC-03:00)"",
+  ""America/Argentina/Ushuaia"": ""(UTC-03:00)"",
+  ""America/Aruba"": ""(UTC-04:00)"",
+  ""America/Asuncion"": ""(UTC-03:00)"",
+  ""America/Atikokan"": ""(UTC-05:00)"",
+  ""America/Atka"": ""(UTC-09:00)"",
+  ""America/Bahia"": ""(UTC-03:00)"",
+  ""America/Bahia_Banderas"": ""(UTC-05:00)"",
+  ""America/Barbados"": ""(UTC-04:00)"",
+  ""America/Belem"": ""(UTC-03:00)"",
+  ""America/Belize"": ""(UTC-06:00)"",
+  ""America/Blanc-Sablon"": ""(UTC-04:00)"",
+  ""America/Boa_Vista"": ""(UTC-04:00)"",
+  ""America/Bogota"": ""(UTC-05:00)"",
+  ""America/Boise"": ""(UTC-06:00)"",
+  ""America/Buenos_Aires"": ""(UTC-03:00)"",
+  ""America/Cambridge_Bay"": ""(UTC-06:00)"",
+  ""America/Campo_Grande"": ""(UTC-04:00)"",
+  ""America/Cancun"": ""(UTC-05:00)"",
+  ""America/Caracas"": ""(UTC-04:00)"",
+  ""America/Catamarca"": ""(UTC-03:00)"",
+  ""America/Cayenne"": ""(UTC-03:00)"",
+  ""America/Cayman"": ""(UTC-05:00)"",
+  ""America/Chicago"": ""(UTC-05:00)"",
+  ""America/Chihuahua"": ""(UTC-06:00)"",
+  ""America/Coral_Harbour"": ""(UTC-05:00)"",
+  ""America/Cordoba"": ""(UTC-03:00)"",
+  ""America/Costa_Rica"": ""(UTC-06:00)"",
+  ""America/Creston"": ""(UTC-07:00)"",
+  ""America/Cuiaba"": ""(UTC-04:00)"",
+  ""America/Curacao"": ""(UTC-04:00)"",
+  ""America/Danmarkshavn"": ""(UTC+00:00)"",
+  ""America/Dawson"": ""(UTC-07:00)"",
+  ""America/Dawson_Creek"": ""(UTC-07:00)"",
+  ""America/Denver"": ""(UTC-06:00)"",
+  ""America/Detroit"": ""(UTC-04:00)"",
+  ""America/Dominica"": ""(UTC-04:00)"",
+  ""America/Edmonton"": ""(UTC-06:00)"",
+  ""America/Eirunepe"": ""(UTC-05:00)"",
+  ""America/El_Salvador"": ""(UTC-06:00)"",
+  ""America/Ensenada"": ""(UTC-07:00)"",
+  ""America/Fort_Nelson"": ""(UTC-07:00)"",
+  ""America/Fort_Wayne"": ""(UTC-04:00)"",
+  ""America/Fortaleza"": ""(UTC-03:00)"",
+  ""America/Glace_Bay"": ""(UTC-03:00)"",
+  ""America/Godthab"": ""(UTC-02:00)"",
+  ""America/Goose_Bay"": ""(UTC-03:00)"",
+  ""America/Grand_Turk"": ""(UTC-04:00)"",
+  ""America/Grenada"": ""(UTC-04:00)"",
+  ""America/Guadeloupe"": ""(UTC-04:00)"",
+  ""America/Guatemala"": ""(UTC-06:00)"",
+  ""America/Guayaquil"": ""(UTC-05:00)"",
+  ""America/Guyana"": ""(UTC-04:00)"",
+  ""America/Halifax"": ""(UTC-03:00)"",
+  ""America/Havana"": ""(UTC-04:00)"",
+  ""America/Hermosillo"": ""(UTC-07:00)"",
+  ""America/Indiana/Indianapolis"": ""(UTC-04:00)"",
+  ""America/Indiana/Knox"": ""(UTC-05:00)"",
+  ""America/Indiana/Marengo"": ""(UTC-04:00)"",
+  ""America/Indiana/Petersburg"": ""(UTC-04:00)"",
+  ""America/Indiana/Tell_City"": ""(UTC-05:00)"",
+  ""America/Indiana/Vevay"": ""(UTC-04:00)"",
+  ""America/Indiana/Vincennes"": ""(UTC-04:00)"",
+  ""America/Indiana/Winamac"": ""(UTC-04:00)"",
+  ""America/Indianapolis"": ""(UTC-04:00)"",
+  ""America/Inuvik"": ""(UTC-06:00)"",
+  ""America/Iqaluit"": ""(UTC-04:00)"",
+  ""America/Jamaica"": ""(UTC-05:00)"",
+  ""America/Jujuy"": ""(UTC-03:00)"",
+  ""America/Juneau"": ""(UTC-08:00)"",
+  ""America/Kentucky/Louisville"": ""(UTC-04:00)"",
+  ""America/Kentucky/Monticello"": ""(UTC-04:00)"",
+  ""America/Knox_IN"": ""(UTC-05:00)"",
+  ""America/Kralendijk"": ""(UTC-04:00)"",
+  ""America/La_Paz"": ""(UTC-04:00)"",
+  ""America/Lima"": ""(UTC-05:00)"",
+  ""America/Los_Angeles"": ""(UTC-07:00)"",
+  ""America/Louisville"": ""(UTC-04:00)"",
+  ""America/Lower_Princes"": ""(UTC-04:00)"",
+  ""America/Maceio"": ""(UTC-03:00)"",
+  ""America/Managua"": ""(UTC-06:00)"",
+  ""America/Manaus"": ""(UTC-04:00)"",
+  ""America/Marigot"": ""(UTC-04:00)"",
+  ""America/Martinique"": ""(UTC-04:00)"",
+  ""America/Matamoros"": ""(UTC-05:00)"",
+  ""America/Mazatlan"": ""(UTC-06:00)"",
+  ""America/Mendoza"": ""(UTC-03:00)"",
+  ""America/Menominee"": ""(UTC-05:00)"",
+  ""America/Merida"": ""(UTC-05:00)"",
+  ""America/Metlakatla"": ""(UTC-08:00)"",
+  ""America/Mexico_City"": ""(UTC-05:00)"",
+  ""America/Miquelon"": ""(UTC-02:00)"",
+  ""America/Moncton"": ""(UTC-03:00)"",
+  ""America/Monterrey"": ""(UTC-05:00)"",
+  ""America/Montevideo"": ""(UTC-03:00)"",
+  ""America/Montreal"": ""(UTC-04:00)"",
+  ""America/Montserrat"": ""(UTC-04:00)"",
+  ""America/Nassau"": ""(UTC-04:00)"",
+  ""America/New_York"": ""(UTC-04:00)"",
+  ""America/Nipigon"": ""(UTC-04:00)"",
+  ""America/Nome"": ""(UTC-08:00)"",
+  ""America/Noronha"": ""(UTC-02:00)"",
+  ""America/North_Dakota/Beulah"": ""(UTC-05:00)"",
+  ""America/North_Dakota/Center"": ""(UTC-05:00)"",
+  ""America/North_Dakota/New_Salem"": ""(UTC-05:00)"",
+  ""America/Nuuk"": ""(UTC-02:00)"",
+  ""America/Ojinaga"": ""(UTC-06:00)"",
+  ""America/Panama"": ""(UTC-05:00)"",
+  ""America/Pangnirtung"": ""(UTC-04:00)"",
+  ""America/Paramaribo"": ""(UTC-03:00)"",
+  ""America/Phoenix"": ""(UTC-07:00)"",
+  ""America/Port-au-Prince"": ""(UTC-04:00)"",
+  ""America/Port_of_Spain"": ""(UTC-04:00)"",
+  ""America/Porto_Acre"": ""(UTC-05:00)"",
+  ""America/Porto_Velho"": ""(UTC-04:00)"",
+  ""America/Puerto_Rico"": ""(UTC-04:00)"",
+  ""America/Punta_Arenas"": ""(UTC-03:00)"",
+  ""America/Rainy_River"": ""(UTC-05:00)"",
+  ""America/Rankin_Inlet"": ""(UTC-05:00)"",
+  ""America/Recife"": ""(UTC-03:00)"",
+  ""America/Regina"": ""(UTC-06:00)"",
+  ""America/Resolute"": ""(UTC-05:00)"",
+  ""America/Rio_Branco"": ""(UTC-05:00)"",
+  ""America/Rosario"": ""(UTC-03:00)"",
+  ""America/Santa_Isabel"": ""(UTC-07:00)"",
+  ""America/Santarem"": ""(UTC-03:00)"",
+  ""America/Santiago"": ""(UTC-03:00)"",
+  ""America/Santo_Domingo"": ""(UTC-04:00)"",
+  ""America/Sao_Paulo"": ""(UTC-03:00)"",
+  ""America/Scoresbysund"": ""(UTC+00:00)"",
+  ""America/Shiprock"": ""(UTC-06:00)"",
+  ""America/Sitka"": ""(UTC-08:00)"",
+  ""America/St_Barthelemy"": ""(UTC-04:00)"",
+  ""America/St_Johns"": ""(UTC-02:30)"",
+  ""America/St_Kitts"": ""(UTC-04:00)"",
+  ""America/St_Lucia"": ""(UTC-04:00)"",
+  ""America/St_Thomas"": ""(UTC-04:00)"",
+  ""America/St_Vincent"": ""(UTC-04:00)"",
+  ""America/Swift_Current"": ""(UTC-06:00)"",
+  ""America/Tegucigalpa"": ""(UTC-06:00)"",
+  ""America/Thule"": ""(UTC-03:00)"",
+  ""America/Thunder_Bay"": ""(UTC-04:00)"",
+  ""America/Tijuana"": ""(UTC-07:00)"",
+  ""America/Toronto"": ""(UTC-04:00)"",
+  ""America/Tortola"": ""(UTC-04:00)"",
+  ""America/Vancouver"": ""(UTC-07:00)"",
+  ""America/Virgin"": ""(UTC-04:00)"",
+  ""America/Whitehorse"": ""(UTC-07:00)"",
+  ""America/Winnipeg"": ""(UTC-05:00)"",
+  ""America/Yakutat"": ""(UTC-08:00)"",
+  ""America/Yellowknife"": ""(UTC-06:00)"",
+  ""Antarctica/Casey"": ""(UTC+11:00)"",
+  ""Antarctica/Davis"": ""(UTC+07:00)"",
+  ""Antarctica/DumontDUrville"": ""(UTC+10:00)"",
+  ""Antarctica/Macquarie"": ""(UTC+11:00)"",
+  ""Antarctica/Mawson"": ""(UTC+05:00)"",
+  ""Antarctica/McMurdo"": ""(UTC+13:00)"",
+  ""Antarctica/Palmer"": ""(UTC-03:00)"",
+  ""Antarctica/Rothera"": ""(UTC-03:00)"",
+  ""Antarctica/South_Pole"": ""(UTC+13:00)"",
+  ""Antarctica/Syowa"": ""(UTC+03:00)"",
+  ""Antarctica/Troll"": ""(UTC+02:00)"",
+  ""Antarctica/Vostok"": ""(UTC+06:00)"",
+  ""Arctic/Longyearbyen"": ""(UTC+02:00)"",
+  ""Asia/Aden"": ""(UTC+03:00)"",
+  ""Asia/Almaty"": ""(UTC+06:00)"",
+  ""Asia/Amman"": ""(UTC+03:00)"",
+  ""Asia/Anadyr"": ""(UTC+12:00)"",
+  ""Asia/Aqtau"": ""(UTC+05:00)"",
+  ""Asia/Aqtobe"": ""(UTC+05:00)"",
+  ""Asia/Ashgabat"": ""(UTC+05:00)"",
+  ""Asia/Ashkhabad"": ""(UTC+05:00)"",
+  ""Asia/Atyrau"": ""(UTC+05:00)"",
+  ""Asia/Baghdad"": ""(UTC+03:00)"",
+  ""Asia/Bahrain"": ""(UTC+03:00)"",
+  ""Asia/Baku"": ""(UTC+04:00)"",
+  ""Asia/Bangkok"": ""(UTC+07:00)"",
+  ""Asia/Barnaul"": ""(UTC+07:00)"",
+  ""Asia/Beirut"": ""(UTC+03:00)"",
+  ""Asia/Bishkek"": ""(UTC+06:00)"",
+  ""Asia/Brunei"": ""(UTC+08:00)"",
+  ""Asia/Calcutta"": ""(UTC+05:30)"",
+  ""Asia/Chita"": ""(UTC+09:00)"",
+  ""Asia/Choibalsan"": ""(UTC+08:00)"",
+  ""Asia/Chongqing"": ""(UTC+08:00)"",
+  ""Asia/Chungking"": ""(UTC+08:00)"",
+  ""Asia/Colombo"": ""(UTC+05:30)"",
+  ""Asia/Dacca"": ""(UTC+06:00)"",
+  ""Asia/Damascus"": ""(UTC+03:00)"",
+  ""Asia/Dhaka"": ""(UTC+06:00)"",
+  ""Asia/Dili"": ""(UTC+09:00)"",
+  ""Asia/Dubai"": ""(UTC+04:00)"",
+  ""Asia/Dushanbe"": ""(UTC+05:00)"",
+  ""Asia/Famagusta"": ""(UTC+03:00)"",
+  ""Asia/Gaza"": ""(UTC+03:00)"",
+  ""Asia/Harbin"": ""(UTC+08:00)"",
+  ""Asia/Hebron"": ""(UTC+03:00)"",
+  ""Asia/Ho_Chi_Minh"": ""(UTC+07:00)"",
+  ""Asia/Hong_Kong"": ""(UTC+08:00)"",
+  ""Asia/Hovd"": ""(UTC+07:00)"",
+  ""Asia/Irkutsk"": ""(UTC+08:00)"",
+  ""Asia/Istanbul"": ""(UTC+03:00)"",
+  ""Asia/Jakarta"": ""(UTC+07:00)"",
+  ""Asia/Jayapura"": ""(UTC+09:00)"",
+  ""Asia/Jerusalem"": ""(UTC+03:00)"",
+  ""Asia/Kabul"": ""(UTC+04:30)"",
+  ""Asia/Kamchatka"": ""(UTC+12:00)"",
+  ""Asia/Karachi"": ""(UTC+05:00)"",
+  ""Asia/Kashgar"": ""(UTC+06:00)"",
+  ""Asia/Kathmandu"": ""(UTC+05:45)"",
+  ""Asia/Katmandu"": ""(UTC+05:45)"",
+  ""Asia/Khandyga"": ""(UTC+09:00)"",
+  ""Asia/Kolkata"": ""(UTC+05:30)"",
+  ""Asia/Krasnoyarsk"": ""(UTC+07:00)"",
+  ""Asia/Kuala_Lumpur"": ""(UTC+08:00)"",
+  ""Asia/Kuching"": ""(UTC+08:00)"",
+  ""Asia/Kuwait"": ""(UTC+03:00)"",
+  ""Asia/Macao"": ""(UTC+08:00)"",
+  ""Asia/Macau"": ""(UTC+08:00)"",
+  ""Asia/Magadan"": ""(UTC+11:00)"",
+  ""Asia/Makassar"": ""(UTC+08:00)"",
+  ""Asia/Manila"": ""(UTC+08:00)"",
+  ""Asia/Muscat"": ""(UTC+04:00)"",
+  ""Asia/Nicosia"": ""(UTC+03:00)"",
+  ""Asia/Novokuznetsk"": ""(UTC+07:00)"",
+  ""Asia/Novosibirsk"": ""(UTC+07:00)"",
+  ""Asia/Omsk"": ""(UTC+06:00)"",
+  ""Asia/Oral"": ""(UTC+05:00)"",
+  ""Asia/Phnom_Penh"": ""(UTC+07:00)"",
+  ""Asia/Pontianak"": ""(UTC+07:00)"",
+  ""Asia/Pyongyang"": ""(UTC+09:00)"",
+  ""Asia/Qatar"": ""(UTC+03:00)"",
+  ""Asia/Qostanay"": ""(UTC+06:00)"",
+  ""Asia/Qyzylorda"": ""(UTC+05:00)"",
+  ""Asia/Rangoon"": ""(UTC+06:30)"",
+  ""Asia/Riyadh"": ""(UTC+03:00)"",
+  ""Asia/Saigon"": ""(UTC+07:00)"",
+  ""Asia/Sakhalin"": ""(UTC+11:00)"",
+  ""Asia/Samarkand"": ""(UTC+05:00)"",
+  ""Asia/Seoul"": ""(UTC+09:00)"",
+  ""Asia/Shanghai"": ""(UTC+08:00)"",
+  ""Asia/Singapore"": ""(UTC+08:00)"",
+  ""Asia/Srednekolymsk"": ""(UTC+11:00)"",
+  ""Asia/Taipei"": ""(UTC+08:00)"",
+  ""Asia/Tashkent"": ""(UTC+05:00)"",
+  ""Asia/Tbilisi"": ""(UTC+04:00)"",
+  ""Asia/Tehran"": ""(UTC+03:30)"",
+  ""Asia/Tel_Aviv"": ""(UTC+03:00)"",
+  ""Asia/Thimbu"": ""(UTC+06:00)"",
+  ""Asia/Thimphu"": ""(UTC+06:00)"",
+  ""Asia/Tokyo"": ""(UTC+09:00)"",
+  ""Asia/Tomsk"": ""(UTC+07:00)"",
+  ""Asia/Ujung_Pandang"": ""(UTC+08:00)"",
+  ""Asia/Ulaanbaatar"": ""(UTC+08:00)"",
+  ""Asia/Ulan_Bator"": ""(UTC+08:00)"",
+  ""Asia/Urumqi"": ""(UTC+06:00)"",
+  ""Asia/Ust-Nera"": ""(UTC+10:00)"",
+  ""Asia/Vientiane"": ""(UTC+07:00)"",
+  ""Asia/Vladivostok"": ""(UTC+10:00)"",
+  ""Asia/Yakutsk"": ""(UTC+09:00)"",
+  ""Asia/Yangon"": ""(UTC+06:30)"",
+  ""Asia/Yekaterinburg"": ""(UTC+05:00)"",
+  ""Asia/Yerevan"": ""(UTC+04:00)"",
+  ""Atlantic/Azores"": ""(UTC+00:00)"",
+  ""Atlantic/Bermuda"": ""(UTC-03:00)"",
+  ""Atlantic/Canary"": ""(UTC+01:00)"",
+  ""Atlantic/Cape_Verde"": ""(UTC-01:00)"",
+  ""Atlantic/Faeroe"": ""(UTC+01:00)"",
+  ""Atlantic/Faroe"": ""(UTC+01:00)"",
+  ""Atlantic/Jan_Mayen"": ""(UTC+02:00)"",
+  ""Atlantic/Madeira"": ""(UTC+01:00)"",
+  ""Atlantic/Reykjavik"": ""(UTC+00:00)"",
+  ""Atlantic/South_Georgia"": ""(UTC-02:00)"",
+  ""Atlantic/St_Helena"": ""(UTC+00:00)"",
+  ""Atlantic/Stanley"": ""(UTC-03:00)"",
+  ""Australia/ACT"": ""(UTC+11:00)"",
+  ""Australia/Adelaide"": ""(UTC+10:30)"",
+  ""Australia/Brisbane"": ""(UTC+10:00)"",
+  ""Australia/Broken_Hill"": ""(UTC+10:30)"",
+  ""Australia/Canberra"": ""(UTC+11:00)"",
+  ""Australia/Currie"": ""(UTC+11:00)"",
+  ""Australia/Darwin"": ""(UTC+09:30)"",
+  ""Australia/Eucla"": ""(UTC+08:45)"",
+  ""Australia/Hobart"": ""(UTC+11:00)"",
+  ""Australia/LHI"": ""(UTC+11:00)"",
+  ""Australia/Lindeman"": ""(UTC+10:00)"",
+  ""Australia/Lord_Howe"": ""(UTC+11:00)"",
+  ""Australia/Melbourne"": ""(UTC+11:00)"",
+  ""Australia/NSW"": ""(UTC+11:00)"",
+  ""Australia/North"": ""(UTC+09:30)"",
+  ""Australia/Perth"": ""(UTC+08:00)"",
+  ""Australia/Queensland"": ""(UTC+10:00)"",
+  ""Australia/South"": ""(UTC+10:30)"",
+  ""Australia/Sydney"": ""(UTC+11:00)"",
+  ""Australia/Tasmania"": ""(UTC+11:00)"",
+  ""Australia/Victoria"": ""(UTC+11:00)"",
+  ""Australia/West"": ""(UTC+08:00)"",
+  ""Australia/Yancowinna"": ""(UTC+10:30)"",
+  ""Brazil/Acre"": ""(UTC-05:00)"",
+  ""Brazil/DeNoronha"": ""(UTC-02:00)"",
+  ""Brazil/East"": ""(UTC-03:00)"",
+  ""Brazil/West"": ""(UTC-04:00)"",
+  ""CET"": ""(UTC+02:00)"",
+  ""CST6CDT"": ""(UTC-05:00)"",
+  ""Canada/Atlantic"": ""(UTC-03:00)"",
+  ""Canada/Central"": ""(UTC-05:00)"",
+  ""Canada/Eastern"": ""(UTC-04:00)"",
+  ""Canada/Mountain"": ""(UTC-06:00)"",
+  ""Canada/Newfoundland"": ""(UTC-02:30)"",
+  ""Canada/Pacific"": ""(UTC-07:00)"",
+  ""Canada/Saskatchewan"": ""(UTC-06:00)"",
+  ""Canada/Yukon"": ""(UTC-07:00)"",
+  ""Chile/Continental"": ""(UTC-03:00)"",
+  ""Chile/EasterIsland"": ""(UTC-05:00)"",
+  ""Cuba"": ""(UTC-04:00)"",
+  ""EET"": ""(UTC+03:00)"",
+  ""EST5EDT"": ""(UTC-04:00)"",
+  ""Egypt"": ""(UTC+02:00)"",
+  ""Eire"": ""(UTC+01:00)"",
+  ""Etc/GMT"": ""(UTC+00:00)"",
+  ""Etc/GMT+0"": ""(UTC+00:00)"",
+  ""Etc/GMT+1"": ""(UTC-01:00)"",
+  ""Etc/GMT+10"": ""(UTC-10:00)"",
+  ""Etc/GMT+11"": ""(UTC-11:00)"",
+  ""Etc/GMT+12"": ""(UTC-12:00)"",
+  ""Etc/GMT+2"": ""(UTC-02:00)"",
+  ""Etc/GMT+3"": ""(UTC-03:00)"",
+  ""Etc/GMT+4"": ""(UTC-04:00)"",
+  ""Etc/GMT+5"": ""(UTC-05:00)"",
+  ""Etc/GMT+6"": ""(UTC-06:00)"",
+  ""Etc/GMT+7"": ""(UTC-07:00)"",
+  ""Etc/GMT+8"": ""(UTC-08:00)"",
+  ""Etc/GMT+9"": ""(UTC-09:00)"",
+  ""Etc/GMT-0"": ""(UTC+00:00)"",
+  ""Etc/GMT-1"": ""(UTC+01:00)"",
+  ""Etc/GMT-10"": ""(UTC+10:00)"",
+  ""Etc/GMT-11"": ""(UTC+11:00)"",
+  ""Etc/GMT-12"": ""(UTC+12:00)"",
+  ""Etc/GMT-13"": ""(UTC+13:00)"",
+  ""Etc/GMT-14"": ""(UTC+14:00)"",
+  ""Etc/GMT-2"": ""(UTC+02:00)"",
+  ""Etc/GMT-3"": ""(UTC+03:00)"",
+  ""Etc/GMT-4"": ""(UTC+04:00)"",
+  ""Etc/GMT-5"": ""(UTC+05:00)"",
+  ""Etc/GMT-6"": ""(UTC+06:00)"",
+  ""Etc/GMT-7"": ""(UTC+07:00)"",
+  ""Etc/GMT-8"": ""(UTC+08:00)"",
+  ""Etc/GMT-9"": ""(UTC+09:00)"",
+  ""Etc/GMT0"": ""(UTC+00:00)"",
+  ""Etc/Greenwich"": ""(UTC+00:00)"",
+  ""Etc/UCT"": ""(UTC+00:00)"",
+  ""Etc/UTC"": ""(UTC+00:00)"",
+  ""Etc/Universal"": ""(UTC+00:00)"",
+  ""Etc/Zulu"": ""(UTC+00:00)"",
+  ""Europe/Amsterdam"": ""(UTC+02:00)"",
+  ""Europe/Andorra"": ""(UTC+02:00)"",
+  ""Europe/Astrakhan"": ""(UTC+04:00)"",
+  ""Europe/Athens"": ""(UTC+03:00)"",
+  ""Europe/Belfast"": ""(UTC+01:00)"",
+  ""Europe/Belgrade"": ""(UTC+02:00)"",
+  ""Europe/Berlin"": ""(UTC+02:00)"",
+  ""Europe/Bratislava"": ""(UTC+02:00)"",
+  ""Europe/Brussels"": ""(UTC+02:00)"",
+  ""Europe/Bucharest"": ""(UTC+03:00)"",
+  ""Europe/Budapest"": ""(UTC+02:00)"",
+  ""Europe/Busingen"": ""(UTC+02:00)"",
+  ""Europe/Chisinau"": ""(UTC+03:00)"",
+  ""Europe/Copenhagen"": ""(UTC+02:00)"",
+  ""Europe/Dublin"": ""(UTC+01:00)"",
+  ""Europe/Gibraltar"": ""(UTC+02:00)"",
+  ""Europe/Guernsey"": ""(UTC+01:00)"",
+  ""Europe/Helsinki"": ""(UTC+03:00)"",
+  ""Europe/Isle_of_Man"": ""(UTC+01:00)"",
+  ""Europe/Istanbul"": ""(UTC+03:00)"",
+  ""Europe/Jersey"": ""(UTC+01:00)"",
+  ""Europe/Kaliningrad"": ""(UTC+02:00)"",
+  ""Europe/Kiev"": ""(UTC+03:00)"",
+  ""Europe/Kirov"": ""(UTC+03:00)"",
+  ""Europe/Lisbon"": ""(UTC+01:00)"",
+  ""Europe/Ljubljana"": ""(UTC+02:00)"",
+  ""Europe/London"": ""(UTC+01:00)"",
+  ""Europe/Luxembourg"": ""(UTC+02:00)"",
+  ""Europe/Madrid"": ""(UTC+02:00)"",
+  ""Europe/Malta"": ""(UTC+02:00)"",
+  ""Europe/Mariehamn"": ""(UTC+03:00)"",
+  ""Europe/Minsk"": ""(UTC+03:00)"",
+  ""Europe/Monaco"": ""(UTC+02:00)"",
+  ""Europe/Moscow"": ""(UTC+03:00)"",
+  ""Europe/Nicosia"": ""(UTC+03:00)"",
+  ""Europe/Oslo"": ""(UTC+02:00)"",
+  ""Europe/Paris"": ""(UTC+02:00)"",
+  ""Europe/Podgorica"": ""(UTC+02:00)"",
+  ""Europe/Prague"": ""(UTC+02:00)"",
+  ""Europe/Riga"": ""(UTC+03:00)"",
+  ""Europe/Rome"": ""(UTC+02:00)"",
+  ""Europe/Samara"": ""(UTC+04:00)"",
+  ""Europe/San_Marino"": ""(UTC+02:00)"",
+  ""Europe/Sarajevo"": ""(UTC+02:00)"",
+  ""Europe/Saratov"": ""(UTC+04:00)"",
+  ""Europe/Simferopol"": ""(UTC+03:00)"",
+  ""Europe/Skopje"": ""(UTC+02:00)"",
+  ""Europe/Sofia"": ""(UTC+03:00)"",
+  ""Europe/Stockholm"": ""(UTC+02:00)"",
+  ""Europe/Tallinn"": ""(UTC+03:00)"",
+  ""Europe/Tirane"": ""(UTC+02:00)"",
+  ""Europe/Tiraspol"": ""(UTC+03:00)"",
+  ""Europe/Ulyanovsk"": ""(UTC+04:00)"",
+  ""Europe/Uzhgorod"": ""(UTC+03:00)"",
+  ""Europe/Vaduz"": ""(UTC+02:00)"",
+  ""Europe/Vatican"": ""(UTC+02:00)"",
+  ""Europe/Vienna"": ""(UTC+02:00)"",
+  ""Europe/Vilnius"": ""(UTC+03:00)"",
+  ""Europe/Volgograd"": ""(UTC+03:00)"",
+  ""Europe/Warsaw"": ""(UTC+02:00)"",
+  ""Europe/Zagreb"": ""(UTC+02:00)"",
+  ""Europe/Zaporozhye"": ""(UTC+03:00)"",
+  ""Europe/Zurich"": ""(UTC+02:00)"",
+  ""GB"": ""(UTC+01:00)"",
+  ""GB-Eire"": ""(UTC+01:00)"",
+  ""GMT"": ""(UTC+00:00)"",
+  ""GMT0"": ""(UTC+00:00)"",
+  ""Greenwich"": ""(UTC+00:00)"",
+  ""Hongkong"": ""(UTC+08:00)"",
+  ""Iceland"": ""(UTC+00:00)"",
+  ""Indian/Antananarivo"": ""(UTC+03:00)"",
+  ""Indian/Chagos"": ""(UTC+06:00)"",
+  ""Indian/Christmas"": ""(UTC+07:00)"",
+  ""Indian/Cocos"": ""(UTC+06:30)"",
+  ""Indian/Comoro"": ""(UTC+03:00)"",
+  ""Indian/Kerguelen"": ""(UTC+05:00)"",
+  ""Indian/Mahe"": ""(UTC+04:00)"",
+  ""Indian/Maldives"": ""(UTC+05:00)"",
+  ""Indian/Mauritius"": ""(UTC+04:00)"",
+  ""Indian/Mayotte"": ""(UTC+03:00)"",
+  ""Indian/Reunion"": ""(UTC+04:00)"",
+  ""Iran"": ""(UTC+03:30)"",
+  ""Israel"": ""(UTC+03:00)"",
+  ""Jamaica"": ""(UTC-05:00)"",
+  ""Japan"": ""(UTC+09:00)"",
+  ""Kwajalein"": ""(UTC+12:00)"",
+  ""Libya"": ""(UTC+02:00)"",
+  ""MET"": ""(UTC+02:00)"",
+  ""MST7MDT"": ""(UTC-06:00)"",
+  ""Mexico/BajaNorte"": ""(UTC-07:00)"",
+  ""Mexico/BajaSur"": ""(UTC-06:00)"",
+  ""Mexico/General"": ""(UTC-05:00)"",
+  ""NZ"": ""(UTC+13:00)"",
+  ""NZ-CHAT"": ""(UTC+13:45)"",
+  ""Navajo"": ""(UTC-06:00)"",
+  ""PRC"": ""(UTC+08:00)"",
+  ""PST8PDT"": ""(UTC-07:00)"",
+  ""Pacific/Apia"": ""(UTC+13:00)"",
+  ""Pacific/Auckland"": ""(UTC+13:00)"",
+  ""Pacific/Bougainville"": ""(UTC+11:00)"",
+  ""Pacific/Chatham"": ""(UTC+13:45)"",
+  ""Pacific/Chuuk"": ""(UTC+10:00)"",
+  ""Pacific/Easter"": ""(UTC-05:00)"",
+  ""Pacific/Efate"": ""(UTC+11:00)"",
+  ""Pacific/Enderbury"": ""(UTC+13:00)"",
+  ""Pacific/Fakaofo"": ""(UTC+13:00)"",
+  ""Pacific/Fiji"": ""(UTC+12:00)"",
+  ""Pacific/Funafuti"": ""(UTC+12:00)"",
+  ""Pacific/Galapagos"": ""(UTC-06:00)"",
+  ""Pacific/Gambier"": ""(UTC-09:00)"",
+  ""Pacific/Guadalcanal"": ""(UTC+11:00)"",
+  ""Pacific/Guam"": ""(UTC+10:00)"",
+  ""Pacific/Honolulu"": ""(UTC-10:00)"",
+  ""Pacific/Johnston"": ""(UTC-10:00)"",
+  ""Pacific/Kanton"": ""(UTC+13:00)"",
+  ""Pacific/Kiritimati"": ""(UTC+14:00)"",
+  ""Pacific/Kosrae"": ""(UTC+11:00)"",
+  ""Pacific/Kwajalein"": ""(UTC+12:00)"",
+  ""Pacific/Majuro"": ""(UTC+12:00)"",
+  ""Pacific/Marquesas"": ""(UTC-09:30)"",
+  ""Pacific/Midway"": ""(UTC-11:00)"",
+  ""Pacific/Nauru"": ""(UTC+12:00)"",
+  ""Pacific/Niue"": ""(UTC-11:00)"",
+  ""Pacific/Norfolk"": ""(UTC+12:00)"",
+  ""Pacific/Noumea"": ""(UTC+11:00)"",
+  ""Pacific/Pago_Pago"": ""(UTC-11:00)"",
+  ""Pacific/Palau"": ""(UTC+09:00)"",
+  ""Pacific/Pitcairn"": ""(UTC-08:00)"",
+  ""Pacific/Pohnpei"": ""(UTC+11:00)"",
+  ""Pacific/Ponape"": ""(UTC+11:00)"",
+  ""Pacific/Port_Moresby"": ""(UTC+10:00)"",
+  ""Pacific/Rarotonga"": ""(UTC-10:00)"",
+  ""Pacific/Saipan"": ""(UTC+10:00)"",
+  ""Pacific/Samoa"": ""(UTC-11:00)"",
+  ""Pacific/Tahiti"": ""(UTC-10:00)"",
+  ""Pacific/Tarawa"": ""(UTC+12:00)"",
+  ""Pacific/Tongatapu"": ""(UTC+13:00)"",
+  ""Pacific/Truk"": ""(UTC+10:00)"",
+  ""Pacific/Wake"": ""(UTC+12:00)"",
+  ""Pacific/Wallis"": ""(UTC+12:00)"",
+  ""Pacific/Yap"": ""(UTC+10:00)"",
+  ""Poland"": ""(UTC+02:00)"",
+  ""Portugal"": ""(UTC+01:00)"",
+  ""ROK"": ""(UTC+09:00)"",
+  ""Singapore"": ""(UTC+08:00)"",
+  ""SystemV/AST4"": ""(UTC-04:00)"",
+  ""SystemV/AST4ADT"": ""(UTC-03:00)"",
+  ""SystemV/CST6"": ""(UTC-06:00)"",
+  ""SystemV/CST6CDT"": ""(UTC-05:00)"",
+  ""SystemV/EST5"": ""(UTC-05:00)"",
+  ""SystemV/EST5EDT"": ""(UTC-04:00)"",
+  ""SystemV/HST10"": ""(UTC-10:00)"",
+  ""SystemV/MST7"": ""(UTC-07:00)"",
+  ""SystemV/MST7MDT"": ""(UTC-06:00)"",
+  ""SystemV/PST8"": ""(UTC-08:00)"",
+  ""SystemV/PST8PDT"": ""(UTC-07:00)"",
+  ""SystemV/YST9"": ""(UTC-09:00)"",
+  ""SystemV/YST9YDT"": ""(UTC-08:00)"",
+  ""Turkey"": ""(UTC+03:00)"",
+  ""UCT"": ""(UTC+00:00)"",
+  ""US/Alaska"": ""(UTC-08:00)"",
+  ""US/Aleutian"": ""(UTC-09:00)"",
+  ""US/Arizona"": ""(UTC-07:00)"",
+  ""US/Central"": ""(UTC-05:00)"",
+  ""US/East-Indiana"": ""(UTC-04:00)"",
+  ""US/Eastern"": ""(UTC-04:00)"",
+  ""US/Hawaii"": ""(UTC-10:00)"",
+  ""US/Indiana-Starke"": ""(UTC-05:00)"",
+  ""US/Michigan"": ""(UTC-04:00)"",
+  ""US/Mountain"": ""(UTC-06:00)"",
+  ""US/Pacific"": ""(UTC-07:00)"",
+  ""US/Samoa"": ""(UTC-11:00)"",
+  ""UTC"": ""(UTC+00:00)"",
+  ""Universal"": ""(UTC+00:00)"",
+  ""W-SU"": ""(UTC+03:00)"",
+  ""WET"": ""(UTC+01:00)"",
+  ""Zulu"": ""(UTC+00:00)""
+}"
+115,115,115,115,115,115,115,115,115,115,116.0,,,users,,,,To get teams page,GET,,title,NA,/api/v1/common/{title},200,NA
+116,116,116,116,116,116,116,116,116,116,117.0,ProfileManagementController,,users,,,,To fetch common fields in a section,GET,uId,section,NA,/api/v1/users/profile/common/{section},200,NA
+117,117,117,117,117,117,117,117,117,117,118.0,,,users,,,,To get the completion percentage of a user profile,GET,,uId,NA,/api/v1/users/profile/completion/{uId},200,0
+118,118,118,118,118,118,118,118,118,118,119.0,,,users,,,,To add education details for a user's profile,PUT,,,"{
+  ""boardName"": ""string"",
+  ""cgpaPercentage"": 0,
+  ""courseType"": ""string"",
+  ""createdby"": ""string"",
+  ""createdts"": ""2022-10-03T02:36:19.640Z"",
+  ""degree"": ""string"",
+  ""eduInfoCount"": 0,
+  ""gradingSystem"": ""string"",
+  ""instituteName"": ""string"",
+  ""passingOutYear"": 0,
+  ""pursuing"": true,
+  ""qualification"": ""string"",
+  ""schoolMedium"": ""string"",
+  ""schoolName"": ""string"",
+  ""specialization"": ""string"",
+  ""uid"": ""string"",
+  ""universityName"": ""string"",
+  ""updatedby"": ""string"",
+  ""updatedts"": ""2022-10-03T02:36:19.640Z""
+}",/api/v1/users/profile/education,201,"{""msg"":""Education Details Saved""}"
+119,119,119,119,119,119,119,119,119,119,120.0,,,users,,,,To fetch user details in a given section,GET,uId,section,NA,/api/v1/users/profile/other/{section},200,NA
+120,120,120,120,120,120,120,120,120,120,121.0,,,users,,,,To add details to profile in a section,PUT,,section,"{
+  ""certification"": ""string"",
+  ""createdby"": ""string"",
+  ""createdts"": ""2022-10-03T02:36:19.640Z"",
+  ""extraCurricular"": ""string"",
+  ""otherDetailsCount"": 0,
+  ""patent"": ""string"",
+  ""uid"": ""string"",
+  ""updatedby"": ""string"",
+  ""updatedts"": ""2022-10-03T02:36:19.640Z"",
+  ""whitePaper"": ""string"",
+  ""workToHighlight"": ""string""
+}",/api/v1/users/profile/other/{section},201,"{""msg"":""User Other details Saved""}"
+121,121,121,121,121,121,121,121,121,121,122.0,,,users,,,,To add personal details in profile,PUT,,,"{
+  ""coverLetter"": ""string"",
+  ""currentAddress"": ""string"",
+  ""currentCity"": ""string"",
+  ""currentState"": ""string"",
+  ""dateOfBirth"": ""2022-10-03T02:36:19.640Z"",
+  ""gender"": ""string"",
+  ""govtIdLink"": ""string"",
+  ""languagesKnown"": ""string"",
+  ""lastWorkingDay"": ""2022-10-03T02:36:19.640Z"",
+  ""maritalStatus"": ""string"",
+  ""otherDetails"": ""string"",
+  ""personalDetailsCount"": 0,
+  ""profileCompletion"": 0,
+  ""profileCreatedby"": ""string"",
+  ""profileCreatedts"": ""2022-10-03T02:36:19.640Z"",
+  ""profilePicLink"": ""string"",
+  ""profileUpdatedby"": ""string"",
+  ""profileUpdatedts"": ""2022-10-03T02:36:19.640Z"",
+  ""resumeLink"": ""string"",
+  ""servingNoticePeriod"": true,
+  ""socialLinks"": ""string"",
+  ""uid"": ""string"",
+  ""zipcode"": ""string""
+}",/api/v1/users/profile/personal,201,"{""msg"":""Personal Details Saved""}"
+122,122,122,122,122,122,122,122,122,122,123.0,,,,,,,To add project details to profile,PUT,,,"{
+  ""client"": ""string"",
+  ""createdby"": ""string"",
+  ""createdts"": ""2022-10-03T02:36:19.641Z"",
+  ""currentlyWorking"": true,
+  ""designation"": ""string"",
+  ""endDate"": ""2022-10-03T02:36:19.641Z"",
+  ""orgOrClgId"": 0,
+  ""projectCount"": 0,
+  ""projectDescription"": ""string"",
+  ""projectLink"": ""string"",
+  ""projectSite"": ""string"",
+  ""projectTitle"": ""string"",
+  ""roleinProject"": ""string"",
+  ""skillsUsed"": ""string"",
+  ""startDate"": ""2022-10-03T02:36:19.641Z"",
+  ""teamSize"": ""string"",
+  ""uid"": ""string"",
+  ""updatedby"": ""string"",
+  ""updatedts"": ""2022-10-03T02:36:19.641Z""
+}",/api/v1/users/profile/project,201,"{""msg"":""Project Details Saved""}"
+123,123,123,123,123,123,123,123,123,123,124.0,,,users,,,,To find if resume is uploaded by user,GET,uId,,NA,/api/v1/users/profile/resume,200,TRUE
+124,124,124,124,124,124,124,124,124,124,125.0,,,users,,,,To add skills to profile,PUT,,,"{
+  ""active"": true,
+  ""createdby"": ""string"",
+  ""createdts"": ""2022-10-03T02:36:19.641Z"",
+  ""relevantExperience"": 0,
+  ""skillLastUsed"": ""2022-10-03T02:36:19.641Z"",
+  ""skillLevelName"": ""string"",
+  ""skillName"": ""string"",
+  ""uid"": ""string"",
+  ""updatedby"": ""string"",
+  ""updatedts"": ""2022-10-03T02:36:19.641Z"",
+  ""userSkillId"": 0
+}",/api/v1/users/profile/skill,201,"{""msg"":""User Skills Saved""}"
+125,125,125,125,125,125,125,125,125,125,126.0,,,users,,,,To add work profile,PUT,,,"  ""createdby"": ""string"",
+  ""createdts"": ""2022-10-03T02:36:19.641Z"",
+  ""currentSalary"": ""string"",
+  ""currentlyWorking"": true,
+  ""endDate"": ""2022-10-03T02:36:19.641Z"",
+  ""expCount"": 0,
+  ""jobDesignation"": ""string"",
+  ""jobType"": ""string"",
+  ""lastWorkingDay"": ""2022-10-03T02:36:19.641Z"",
+  ""noticePeriod"": ""string"",
+  ""organisationName"": ""string"",
+  ""startDate"": ""2022-10-03T02:36:19.641Z"",
+  ""uid"": ""string"",
+  ""updatedby"": ""string"",
+  ""updatedts"": ""2022-10-03T02:36:19.641Z"",
+  ""workDescription"": ""string"",
+  ""workLocation"": ""string"",
+  ""workSkillsToHighlight"": ""string""
+}",/api/v1/users/profile/work,201,"{""msg"":""Work Profile Saved""}"
+126,126,126,126,126,126,126,126,126,126,127.0,,,users,,,,To delete a section in a user's profile,DELETE,id,section,NA,/api/v1/users/profile/{section},,NA
+127,127,127,127,127,127,127,127,127,127,128.0,,,users,,,,To fetch a section in a user's profile,GET,uId,section,NA,/api/v1/users/profile/{section},200,NA
+128,128,128,128,128,128,128,128,128,128,129.0,,,users,,,,To add details to profile in a section,PUT,,section,requestPayload,/api/v1/users/profile/{section},201,"{""msg"":""Work Profile Saved""}"
+129,129,129,129,129,129,129,129,129,129,130.0,,,users,,,,To upload resume in a profile,PUT,uId,,"{
+  ""link"": ""string"",
+  ""linkType"": ""string""
+}",/api/v1/users/profile/{uId}/upload,200,NA
+130,130,130,130,130,130,130,130,130,130,,,Drill,,,,Dashboard,,GET,,,NA,/api/v1/drills/listDrill,200,#NAME?
+131,131,131,131,131,131,131,131,131,131,,,Drill,,,,"Dashboard, Judgement criteria, Collaborators, themes, add panel, mail templates",,GET,,,NA,/api/v1/users/{partnerId}/customer,200,NA
+132,132,132,132,132,132,132,132,132,132,,,Drill,,,,Login,,POST,,,NA,/api/v1/users/login,200,NA
+133,133,133,133,133,133,133,133,133,133,,,Drill,,,,Create New Drill,,GET,,,NA,/api/v1/drills/commons,200,NA
+134,134,134,134,134,134,134,134,134,134,,,Drill,,,,"Create New Drill--> Timezone, type of the hackathon",,GET,,,NA,/api/v1/common/timezones,200,NA
+135,135,135,135,135,135,135,135,135,135,,,Drill,,,,"Set up, showcase, phases, location, team size, collaborators, judgement criteria, themes, add panel,mail templates",,GET,,,NA,/api/v1/drills,200,NA
+136,136,136,136,136,136,136,136,136,136,,,Drill,,,,"Overview--> Outline, Showcase, sponsers, collaborators",,GET,,,NA,/api/v1/drills/{partnerId}/OVERVIEW,200,NA
+137,137,137,137,137,137,137,137,137,137,,,Drill,,,,Overview--> Domaine & technology,,GET,,,NA,/api/v1/common/domain,200,NA
+138,138,138,138,138,138,138,138,138,138,,,Drill,,,,Overview--> Domaine & technology,,GET,,,NA,/api/v1/common/technology,200,NA
+139,139,139,139,139,139,139,139,139,139,,,Drill,,,,Schedule,,GET,,,NA,/api/v1/drills/{partnerId}/SCHEDULE,200,NA
+140,140,140,140,140,140,140,140,140,140,,,Drill,,,,Prizes,,GET,,,NA,/api/v1/drills/{partnerId}/PRIZES,200,NA
+141,141,141,141,141,141,141,141,141,141,,,Drill,,,,FAQs,,GET,,,NA,/api/v1/drills/{partnerId}/FAQ,200,NA
+142,142,142,142,142,142,142,142,142,142,,,Drill,,,,"Sponsors, collaborators, speakers, mentors, judges, Judgement, Add panel, Assign panel",,GET,,,NA,/api/v1/drills/{partnerId}/COLLABORATORS,200,NA
+143,143,143,143,143,143,143,143,143,143,,,Drill,,,,Submission Fields,,GET,,,NA,/api/v1/drills/{partnerId}/submissionFields,200,NA
+144,144,144,144,144,144,144,144,144,144,,,Drill,,,,Submission Fields,,GET,,,NA,/api/v1/drills/submissionFields/default,200,NA
+145,145,145,145,145,145,145,145,145,145,,,Drill,,,,Judgement Criteria,,GET,,,NA,/api/v1/drills/{partnerId}/JUDGINGCRITERIA,200,NA
+146,146,146,146,146,146,146,146,146,146,,,Drill,,,,"Themes, Assign Submissions",,GET,,,NA,/api/v1/drills/{partnerId}/THEMES,200,NA
+147,147,147,147,147,147,147,147,147,147,,,Drill,,,,Open positions,,GET,,,NA,/api/v1/drills/{partnerId}/OPPORTUNITIES,200,NA
+148,148,148,148,148,148,148,148,148,148,,,Drill,,,,Resources,,GET,,,NA,/api/v1/drills/{partnerId}/RESOURCES,200,NA
+149,149,149,149,149,149,149,149,149,149,,,Drill,,,,"Assign Panel, Add Panel",,GET,,,NA,/api/v1/drills/{partnerId}/panels,200,NA
+150,150,150,150,150,150,150,150,150,150,,,Drill,,,,Assign Submissions,,GET,,,NA,/api/v1/drills/{partnerId}/submissions,200,NA
+151,151,151,151,151,151,151,151,151,151,,,Drill,,,,Finale,,GET,,,NA,/api/v1/drills/{partnerId}/submissions/evaluations/all,200,NA
+152,152,152,152,152,152,152,152,152,152,,,Drill,,,,360 Analysis,,GET,,,NA,/api/v1/stats/drills/{partnerId},200,NA
+153,153,153,153,153,153,153,153,153,153,,,Drill,,,,"Send Mails, Mail templates",,GET,,,NA,/api/v1/drills/{partnerId}/mails/templates,200,NA
+154,154,154,154,154,154,154,154,154,154,,,Drill,,,,"Set up--> Overview--> Outline, domain/technology, guidelines",,POST,,,NA,/api/v1/drills/OVERVIEW,200,NA
+155,155,155,155,155,155,155,155,155,155,,,Drill,,,,"Set up--> Basic details--> Showcase, phases, location, team size",,POST,,,NA,/api/v1/drills,200,NA
+156,156,156,156,156,156,156,156,156,156,,,Drill,,,,Set up--> Basic details--> Schedule,,POST,,,NA,/api/v1/drills/SCHEDULE,200,NA
+157,157,157,157,157,157,157,157,157,157,,,Drill,,,,Set up--> Basic details--> Prizes,,POST,,,NA,/api/v1/drills/PRIZES,200,NA
+158,158,158,158,158,158,158,158,158,158,,,Drill,,,,Set up--> Basic details--> FAQs,,POST,,,NA,/api/v1/drills/FAQ,200,NA
+159,159,159,159,159,159,159,159,159,159,,,Drill,,,,"Set up--> Add collaborators--> Mentors, Judges, Sponsors, collaborators",,POST,,,NA,/api/v1/drills/COLLABORATORS,200,NA
+160,160,160,160,160,160,160,160,160,160,,,Drill,,,,"Set up--> Submission Fields--> Configure submission fields, Add submission guidelines",,POST,,,NA,/api/v1/drills/{partnerId}/submissionFields/configure,200,NA
+161,161,161,161,161,161,161,161,161,161,,,Drill,,,,Set up--> Judgement Criteria,,POST,,,NA,/api/v1/drills/JUDGINGCRITERIA,200,NA
+162,162,162,162,162,162,162,162,162,162,,,Drill,,,,Judges,,DELETE,,,NA,/api/v1/drills/{partnerId}/COLLABORATORS/{partnerId},200,NA
+163,163,163,163,163,163,163,163,163,163,,,Drill,,,,Judgement Criteria,,DELETE,,,NA,/api/v1/drills/{partnerId}/JUDGINGCRITERIA/{partnerId},200,NA
+164,164,164,164,164,164,164,164,164,164,,,Drill,,,,Themes,,POST,,,NA,/api/v1/drills/THEMES,200,NA
+165,165,165,165,165,165,165,165,165,165,,,Drill,,,,Themes,,DELETE,,,NA,/api/v1/drills/{partnerId}/THEMES/0ec1ec29-eacb-4ea8-a3c8-edc2ed9d5345,200,NA
+166,166,166,166,166,166,166,166,166,166,,,Drill,,,,Open positions,,POST,,,NA,/api/v1/drills/OPPORTUNITIES,200,NA
+167,167,167,167,167,167,167,167,167,167,,,Drill,,,,Open positions,,DELETE,,,NA,/api/v1/drills/{PartnerId}/OPPORTUNITIES/45af4cc1-41f5-4e42-91f1-1cbb73ba36bc,200,NA
+168,168,168,168,168,168,168,168,168,168,,,Drill,,,,Problem statement,,POST,,,NA,/api/v1/drills/PROBLEMSTATEMENT,200,NA
+169,169,169,169,169,169,169,169,169,169,,,Drill,,,,Resources,,POST,,,NA,/api/v1/drills/RESOURCES,200,NA
+170,170,170,170,170,170,170,170,170,170,,,Drill,,,,Add Panel,,POST,,,NA,/api/v1/drills/{partnerId}/panels,200,NA
+171,171,171,171,171,171,171,171,171,171,,,Drill,,,,Send mails,,POST,,,NA,/api/v1/drills/{partnerId}/mails,200,NA
+172,172,172,172,172,172,172,172,172,172,,,Drill,,,,Mail templates,,POST,,,NA,/api/v1/drills/{partnerId}/mails/templates,200,NA

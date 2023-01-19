@@ -1,0 +1,22 @@
+
+API_NAME
+-----------------------------------------
+
+- **Method:** API_METHOD
+- **Request URL:** API_URI
+- **Parameter Location:** Request Body
+- **Description:** API_DESCRIPTION
+
+**Request Parameters**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block::
+ 
+    API_REQUESTPARAMETER
+
+
+**Response Object**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block::
+
+    API_RESPONSE

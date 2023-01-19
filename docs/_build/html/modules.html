@@ -1,0 +1,781 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Wuelev8 Api Documentation &mdash; Demo 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="User" href="spamfilter.html" />
+    <link rel="prev" title="Welcome to Demo’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Demo
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Wuelev8 Api Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html">User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="token.html">token module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Demo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+<div class="git-ribbon">
+  <a href="http://github.com/SwissDataScienceCenter" rel="me">Join us on GitHub</a>
+</div>
+
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Wuelev8 Api Documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/modules.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="wuelev8-api-documentation">
+<h1>Wuelev8 Api Documentation<a class="headerlink" href="#wuelev8-api-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="spamfilter.html">User</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#login">login</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#request-parameters"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#response-object"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#forgotpassword">forgotpassword</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id1"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id2"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#loginattempt">loginattempt</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id3"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id4"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#register">register</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id5"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id6"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#resendverification">resendverification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id7"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id8"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#updatepassword">updatepassword</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id9"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id10"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#users">users</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id11"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id12"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#search">search</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id13"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id14"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id15">login</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id16"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id17"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#accesses">accesses</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id18"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id19"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id20">users</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id21"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id22"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#health">health</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id23"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id24"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id25">health</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id26"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id27"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id28">health</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id29"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id30"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id31">health</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id32"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id33"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id34">health</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id35"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id36"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id37">health</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id38"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id39"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id40">health</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id41"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id42"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#drills">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id43"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id44"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id45">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id46"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id47"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id48">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id49"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id50"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id51">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id52"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id53"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id54">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id55"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id56"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id57">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id58"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id59"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id60">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id61"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id62"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id63">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id64"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id65"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id66">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id67"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id68"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id69">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id70"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id71"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id72">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id73"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id74"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id75">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id76"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id77"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id78">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id79"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id80"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id81">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id82"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id83"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id84">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id85"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id86"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id87">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id88"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id89"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id90">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id91"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id92"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id93">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id94"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id95"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id96">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id97"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id98"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id99">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id100"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id101"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id102">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id103"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id104"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id105">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id106"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id107"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id108">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id109"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id110"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id111">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id112"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id113"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id114">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id115"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id116"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id117">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id118"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id119"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id120">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id121"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id122"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id123">drills</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id124"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id125"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#jobs">jobs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id126"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id127"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id128">jobs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id129"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id130"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id131">jobs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id132"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id133"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id134">jobs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id135"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id136"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id137">jobs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id138"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id139"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id140">jobs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id141"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id142"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id143">jobs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id144"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id145"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id146">jobs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id147"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id148"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id149">jobs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id150"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id151"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id152">jobs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id153"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id154"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id155">jobs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id156"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id157"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#squad">squad</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id158"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id159"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id160">squad</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id161"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id162"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#upload">upload</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id163"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id164"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#contact">contact</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id165"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id166"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id167">contact</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id168"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id169"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id170">contact</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id171"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id172"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#certificate">certificate</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id173"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id174"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#event">event</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id175"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id176"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id177">event</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id178"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id179"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id180">event</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id181"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id182"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spamfilter.html#id183">event</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id184"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id185"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id186"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id187"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id188"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id189"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id190"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id191"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id192"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id193"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id194"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id195"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id196"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id197"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id198"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id199"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id200"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id201"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id202"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id203"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id204"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id205"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id206"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id207"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id208"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id209"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id210"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id211"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id212"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id213"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id214"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id215"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id216"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id217"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id218"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id219"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id220"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id221"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id222"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id223"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id224"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id225"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id226"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id227"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id228"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id229"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id230"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id231"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id232"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id233"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id234"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id235"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id236"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id237"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id238"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id239"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id240"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id241"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id242"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id243"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id244"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id245"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id246"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id247"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id248"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id249"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id250"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id251"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id252"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id253"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id254"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id255"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id256"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id257"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id258"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id259"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id260"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id261"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id262"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id263"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id264"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id265"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id266"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id267"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id268"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id269"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id270"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id271"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id272"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id273"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id274"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id275"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id276"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id277"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id278"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id279"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id280"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id281"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id282"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id283"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id284"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id285"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id286"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id287"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id288"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id289"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id290"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id291"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id292"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id293"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id294"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id295"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id296"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id297"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id298"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id299"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id300"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id301"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id302"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id303"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id304"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id305"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id306"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id307"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id308"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id309"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id310"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id311"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id312"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id313"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id314"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id315"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id316"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id317"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id318"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id319"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id320"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id321"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id322"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id323"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id324"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id325"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id326"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id327"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id328"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id329"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id330"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id331"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id332"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id333"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id334"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id335"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id336"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id337"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id338"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id339"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id340"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id341"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id342"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id343"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id344"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id345"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id346"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id347"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id348"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id349"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id350"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id351"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id352"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id353"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id354"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id355"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id356"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id357"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id358"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id359"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id360"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id361"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id362"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id363"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id364"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id365"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id366"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id367"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id368"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id369"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id370"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id371"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id372"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id373"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id374"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id375"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id376"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id377"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id378"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id379"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id380"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id381"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id382"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id383"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id384"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id385"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id386"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id387"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id388"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id389"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id390"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id391"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id392"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id393"><strong>Response Object</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id394"><strong>Request Parameters</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="spamfilter.html#id395"><strong>Response Object</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="token.html">token module</a></li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="spamfilter.html" class="btn btn-neutral float-right" title="User" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Demo’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2023, Hritik.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
